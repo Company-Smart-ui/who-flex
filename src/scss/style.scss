@@ -1,0 +1,561 @@
+header{
+	height: 60px;
+}
+
+@font-face {
+	font-family: 'Arial', sans-serif;
+	src: url(../fonts/Arialn.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Arial', sans-serif;
+	src: url(../fonts/ArialTh.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Arial', sans-serif;
+	src: url(../fonts/ARIBL0.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Arial', sans-serif;
+	src: url(../fonts/G_ari_bd.TTF);
+	font-weight: 600;
+}
+
+
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 23px;
+
+}
+
+a,
+button {
+	cursor: pointer;
+}
+
+/* ######### Utility CSS ######### */
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.d-none {
+	display: none !important;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.main-text-color {
+	color: #e0c463;
+}
+
+.main-bg-color {
+	color: #e0c463;
+}
+
+.text-red {
+	color: #ea4335;
+}
+
+.text-gray {
+	color: #999999;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+
+.mb-6 {
+	margin-bottom: 6px;
+}
+
+
+.mb-8 {
+	margin-bottom: 8px;
+}
+
+.mb-12 {
+	margin-bottom: 12px;
+}
+
+.mb-16 {
+	margin-bottom: 16px;
+}
+
+.mb-17 {
+	margin-bottom: 17px;
+}
+
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.mb-24 {
+	margin-bottom: 24px;
+}
+
+.mb-26 {
+	margin-bottom: 26px;
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+
+.mt-4 {
+	margin-top: 4px;
+}
+
+.mt-8 {
+	margin-top: 8px;
+}
+
+.mt-24 {
+	margin-top: 24px;
+}
+
+.mt-36 {
+	margin-top: 36px;
+}
+
+.mt-48 {
+	margin-top: 48px;
+}
+.mt-40 {
+	margin-top: 40px;
+}
+.mt-45 {
+	margin-top: 45px;
+}
+
+.mt-50 {
+	margin-top: 50px;
+}
+
+
+.mt-60 {
+	margin-top: 60px;
+}
+
+.mt-90 {
+	margin-top: 90px;
+}
+
+
+.ml-10 {
+	margin-left: 10px;
+}
+
+.ml-12 {
+	margin-left: 12px;
+}
+
+.mr-8 {
+	margin-right: 8px;
+}
+
+.mr-12 {
+	margin-right: 12px;
+}
+
+.helper-text {
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 14px;
+}
+
+@media only screen and (max-width: 575px) {
+	.whoflex-logo {
+		max-width: 130px;
+		margin-bottom: 8px;
+	}
+}
+
+@media only screen and (max-width: 380px) {
+	.whoflex-logo {
+		max-width: 100px;
+	}
+}
+@media only screen and (max-width: 575px){
+	.whoflex-moto{
+		display: none;
+	}
+}
+.whoflex-moto {
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	color: #000000;
+}
+
+.whoflex-or {
+	position: relative;
+	text-align: center;
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 18px;
+	color: #a29f9f;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.whoflex-or::after,
+.whoflex-or::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	height: 1px;
+	background-color: #ccc;
+	width: 46%;
+}
+
+.whoflex-or::before {
+	left: 0;
+}
+
+.whoflex-or::after {
+	right: 0;
+}
+
+/* ######### Modal CSS ######### */
+.whoflex-signin-modal,
+.whoflex-signup-modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+	overflow-y: auto;
+}
+@media only screen and (max-width: 575px) {
+	.whoflex-signin-modal-content, .whoflex-signup-modal-content {
+		padding: 30px 15px;
+		width: 100%;
+		height: 100%;
+	}
+}
+.whoflex-modal-content, .whoflex-signup-modal-content {
+	box-sizing: border-box;
+	background-color: white;
+}
+@media only screen and (min-width: 575px) {
+	.whoflex-modal-content, .whoflex-signup-modal-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.whoflex-modal-content{
+		border-radius: 0.5rem;
+		padding: 48px 42px 43px;
+	}
+	.whoflex-signup-modal-content{
+		border-radius: 10px;
+	}
+}
+
+
+.whoflex-signin-modal-content {
+	width: 482px;
+}
+
+.whoflex-signin-close-button {
+	width: 30px;
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	border: 2px solid transparent;
+	border-radius: 30px;
+	transition: 0.3s ease-in-out;
+	padding: 5px;
+}
+
+.whoflex-signup-close-button {
+	width: 30px;
+	cursor: pointer;
+	position: absolute;
+	right: 7px;
+	top: 8px;
+	border: 2px solid transparent;
+	border-radius: 30px;
+	transition: 0.3s ease-in-out;
+	padding: 5px;
+}
+
+.whoflex-signin-close-button:hover,
+.whoflex-signup-close-button:hover {
+	background-color: #eee;
+}
+
+.whoflex-signin-show-modal,
+.whoflex-signup-show-modal {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* ######### Input CSS ######### */
+.whoflex-label {
+	font-family: 'Arial';
+	font-weight: 500;
+	font-size: 15px;
+	color: #000000;
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 0;
+}
+
+.whoflex-input {
+	font-family: 'Arial';
+	padding: 11.12px 12px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+	box-sizing: border-box;
+}
+
+.whoflex-input:focus,
+.whoflex-input:focus-visible {
+	border: 1px solid #e0c463;
+	outline: none;
+}
+
+/* ######### BUtton CSS ######### */
+.whoflex-button {
+	font-family: 'Arial';
+	font-weight: 700;
+	font-size: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	background: #e0c463;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+	border: 0;
+	padding: 17.68px 12px;
+	cursor: pointer;
+}
+
+.whoflex-button:hover {
+	background-color: #343434;
+}
+
+.whoflex-social-button {
+	font-family: 'Arial';
+	height: 60px;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: 16px;
+	color: #000000;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width: 100%;
+	padding: 0 16px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin-bottom: 14px;
+	background-color: #fff;
+}
+
+.whoflex-social-button:hover {
+	border: 1px solid #e0c463;
+}
+
+.whoflex-social-button svg {
+	display: inline-block;
+	/* margin-right: 12px; */
+}
+
+.whoflex-social-button span {
+	display: inline-block;
+}
+
+.login-bottom-whoflex-link .whoflex-link {
+	font-size: 16px;
+}
+
+.whoflex-link {
+	font-family: 'Arial';
+	font-weight: 700;
+	font-size: 14px;
+	color: #e0c363;
+	text-decoration-line: none;
+	transition: 0.3s ease-in-out;
+}
+
+.whoflex-link:hover {
+	text-decoration-line: underline;
+}
+
+/* ######### Sign Up CSS ######### */
+.signup-modal-container {
+	display: flex;
+	height: 642px;
+}
+
+@media only screen and (max-width: 991px) {
+	.signup-modal-container {
+		display: block;
+	}
+}
+
+.signup-modal-left-container {
+	width: 49%;
+	position: relative;
+}
+
+@media only screen and (max-width: 991px) {
+	.signup-modal-left-container {
+		display: none;
+	}
+}
+
+.whoflex-signup-modal-content {
+	width: 869px;
+	padding: 0;
+}
+
+@media screen and (max-width: 991px) {
+	.whoflex-signup-modal-content {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.whoflex-signup-modal-content {
+		width: 70%;
+	}
+}
+
+.whoflex-left-text-container {
+	position: absolute;
+	left: 44px;
+	bottom: 158px;
+	color: #fff;
+}
+
+.whoflex-left-img {
+	max-width: 100%;
+	height: 100%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.whoflex-left-text-container h3 {
+	font-family: 'Arial';
+	font-weight: 700;
+	font-size: 34px;
+	line-height: 41px;
+	color: #ffffff;
+	margin-bottom: 0;
+	width: 70%;
+}
+
+.whoflex-left-text-container p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px;
+	color: #FFFFFF;
+	width: 80%;
+}
+
+.signup-modal-right-container {
+	background-color: #fff;
+	width: 51%;
+	padding: 48px 54px 48px 42px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+	.signup-modal-right-container {
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.signup-modal-right-container {
+		padding: 30px 15px;
+	}
+}
+
+.sign-back-button {
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 16px;
+	color: #999999;
+	display: flex;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.sign-back-button img {
+	filter: none;
+	transition: 0.3s ease-in-out;
+}
+
+.sign-back-button:hover {
+	color: #000000;
+}
+
+.sign-back-button:hover img {
+	filter: brightness(0%);
+}
+
+.whoflex-aggrement {
+	font-family: 'Arial';
+	font-weight: 400;
+	font-size: 15px;
+	color: #999999;
+}
