@@ -4,6 +4,7 @@ const signInTrigger = document.querySelector(".signin-trigger");
 const signUpTrigger = document.querySelector(".signup-trigger");
 const signInCloseButton = document.querySelector(".whoflex-signin-close-button");
 const signUpCloseButton = document.querySelector(".whoflex-signup-close-button");
+const signUpTitle = document.querySelector(".whoflex-modal-title-sing-up");
 const signUpButton = document.getElementById("signUpButton");
 const signUpInputs = document.getElementById("signUpInputs");
 const signUpSocialButtons = document.getElementById("signUpSocialButtons");
@@ -52,6 +53,7 @@ function hideEmailSignUpEmail(e) {
     whoflexAggrement.classList.remove("mb-0", "mt-45" )
     signupModalContainer.style.height = "679px"
     whoflexLeftTextContainer.style.bottom = "192px"
+    signUpTitle.classList.add("d-none")
 }
 
 function showEmailSignUpEmail(e) {
@@ -70,6 +72,7 @@ function showEmailSignUpEmail(e) {
     whoflexAggrement.classList.remove("mb-17", "mt-90")
     signupModalContainer.style.height = "642px"
     whoflexLeftTextContainer.style.bottom = "158px"
+    signUpTitle.classList.remove("d-none")
 
 }
 
