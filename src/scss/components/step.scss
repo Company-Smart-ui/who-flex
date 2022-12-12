@@ -1,0 +1,81 @@
+@import "var";
+
+.step{
+  &-1{
+    margin-bottom: 30px;
+    &.active{
+
+
+    }
+  }
+  &-2{
+    margin-bottom: 30px;
+  }
+  &-3{
+    margin-bottom: 30px;
+    font-size: 15px;
+    @include lg{
+      font-size: 14px;
+    }
+    .whoflex-agreement{
+      font-size: 14px;
+      margin-bottom: 15px;
+      @include lg{
+        margin-bottom: 22px;
+      }
+      .whoflex-checkbox+label{
+        flex-wrap: wrap;
+        .whoflex-link{
+          padding: 0 5px;
+          &:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+      .whoflex-checkbox:checked+label::before{
+        border-color: #000000;
+        background-color: #000000;
+      }
+      .whoflex-checkbox:checked+label{
+        font-weight: 400;
+      }
+    }
+    .instructor-app__subtitle{
+      margin-bottom: 15px;
+      @include lg{
+        margin-bottom: 17px;
+      }
+    }
+  }
+  &__wrapper{
+    display: flex;
+    gap: 6px;
+    @include lg{
+      gap: 10px;
+    }
+  }
+  &__point{
+    color: #666666;
+    width: 33.3%;
+    position: relative;
+    &::before{
+      position: absolute;
+      top: 30px;
+      left: 0;
+      content: '';
+      height: 7px;
+      width: 100%;
+      border-radius: 100px;
+      background-color: #E9E9E9;
+    }
+    &.active{
+      color: #E0C463;
+      &::before{
+        background-color: #E0C463;
+      }
+    }
+  }
+  textarea {
+    resize: none;
+  }
+}

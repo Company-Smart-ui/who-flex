@@ -1,0 +1,89 @@
+@import "var";
+@import "step";
+
+.instructor-app {
+  background-color: #F8F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  input {
+    font-size: 16px;
+
+    &::placeholder {
+      color: #999999;
+    }
+  }
+
+  &__wrapper {
+    padding: 35px 16px 40px;
+    max-width: 700px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 0 18px 9px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    margin: 50px 16px 70px;
+    @include sm{
+      padding: 35px 50px 40px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 40px;
+    @include lg {
+      font-size: 29px;
+      margin-bottom: 55px;
+    }
+  }
+  &__subtitle{
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 9px;
+    position: relative;
+    @include lg{
+      font-size: 20px;
+    }
+    &::before{
+      position: absolute;
+      content: "Required fields *";
+      right: 0;
+      color: #666666;
+      font-size: 12px;
+      @include lg{
+        font-size: 15px;
+      }
+    }
+  }
+  &__description{
+    color: #333333;
+    max-width: 400px;
+    margin: 0 0 24px;
+    @include lg{
+      margin-bottom: 30px;
+    }
+  }
+  &__buttons{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+    .whoflex-button{
+      width: 50%;
+      display: inline-block;
+      font-size: 18px;
+      &__prev{
+        background-color: #000;
+      }
+    }
+  }
+  &__wrap-input{
+    margin-bottom: 11px;
+    @include lg{
+      margin-bottom: 15px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

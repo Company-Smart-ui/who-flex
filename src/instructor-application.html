@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who flex</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <secrion class="instructor-app">
+    <div class="instructor-app__wrapper">
+      <h1 class="instructor-app__title">Instructor Application</h1>
+      <form class="instructor-app__form" action="#">
+        @@include('./components/step-1.html')
+        @@include('./components/step-2.html')
+        @@include('./components/step-3.html')
+
+        <div class="instructor-app__buttons">
+          <button class="whoflex-button whoflex-button__prev" type="button">previous</button>
+          <button class="whoflex-button whoflex-button__next" type="button">Next</button>
+        </div>
+        <div class="step__wrapper">
+          <div class="step__point" id="point1">Step 1</div>
+          <div class="step__point" id="point2">Step 2</div>
+          <div class="step__point" id="point3">Step 3</div>
+        </div>
+      </form>
+    </div>
+  </secrion>
+
+  <script src="js/script.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/instructor-app.js"></script>
+</body>
+</html>

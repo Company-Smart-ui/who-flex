@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who flex</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <secrion class="instructor-app">
+    <div class="instructor-app__wrapper">
+      <h1 class="instructor-app__title">Instructor Application</h1>
+      <form class="instructor-app__form" action="#">
+        <div class="step step-1 active">
+    <h2 class="instructor-app__subtitle">1. Personal information</h2>
+    <div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="text" id="firstName" placeholder="First Name*" required/>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="text" id="lastName" placeholder="Last Name*" required/>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="email" id="email" placeholder="Email*" onchange="checkEmailValidation()" required/>
+            <span class="mt-8 text-red helper-text" id="error-message">Please enter a valid email</span>
+            <span class="mt-8 d-block text-gray helper-text">Your email address will be used for your Whoflex Instructor Account login once your application is accepted.</span>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="password" id="password" placeholder="Password*" required/>
+
+            <span class="mt-8 d-block text-gray helper-text">Your password must be at least 6 characters. The password will be used for your Whoflex Instructor Account login once your application is accepted.</span>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="text" placeholder="Linkedin profile URL"/>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="text" placeholder="Twitter URL"/>
+        </div>
+        <div class="instructor-app__wrap-input">
+            <input class="whoflex-input" type="text" placeholder="Website URL"/>
+        </div>
+    </div>
+</div>
+        <div class="step step-2">
+    <h2 class="instructor-app__subtitle">2. Topics</h2>
+    <p class="instructor-app__description">Please select topics for your class or coaching. You can choose up to three topics in each field.</p>
+
+    <div>
+        <div class="accordion" >
+
+            <div class="accordion__item">
+                <h3 type="button" class="accordion__title-text" tabindex="0">
+                    <svg width="21" height="22" viewBox="0 0 21 22" fill="none">
+                        <path d="M18.3005 3.7788H15.2632V3.1348C15.2632 1.4062 14.0522 0 12.5636 0H8.68267C7.19402 0 5.98301 1.40625 5.98301 3.1348V3.7788H2.94576C1.4571 3.7788 0.246094 5.18505 0.246094 6.9136V18.8652C0.246094 20.5938 1.45714 22 2.94576 22H18.3003C19.789 22 21 20.5938 21 18.8652V6.9136C21.0002 5.185 19.7891 3.7788 18.3005 3.7788ZM7.78289 3.13517C7.78289 2.55882 8.18652 2.09032 8.68271 2.09032H12.5636C13.06 2.09032 13.4634 2.55901 13.4634 3.13517V3.77917H7.78281L7.78289 3.13517ZM2.94592 5.86874H18.3005C18.7968 5.86874 19.2003 6.33743 19.2003 6.9136L19.2005 9.43267H2.04609V6.9136C2.04609 6.33738 2.44972 5.86874 2.94592 5.86874H2.94592ZM18.3005 19.9102H2.94592C2.44957 19.9102 2.0461 19.4416 2.0461 18.8654L2.04594 11.5228H19.2003V18.8654C19.2003 19.4417 18.7967 19.9104 18.3005 19.9104L18.3005 19.9102Z" fill="black"/>
+                    </svg>
+                    Business
+                </h3>
+                <div class="accordion__body">
+                    <ul class="accordion__content">
+                        <li>
+    <input type="checkbox" id="marketing" name="Marketing" class="whoflex-checkbox">
+    <label for="marketing">Marketing</label>
+</li>
+<li>
+    <input type="checkbox" id="e-commerce" name="E-Commerce" class="whoflex-checkbox">
+    <label for="e-commerce">E-Commerce</label>
+</li>
+<li>
+    <input type="checkbox" id="web-mobile-design" name="Web & Mobile Design" class="whoflex-checkbox">
+    <label for="web-mobile-design">Web & Mobile Design</label>
+</li>
+<li>
+    <input type="checkbox" id="entrepreneurship" name="Entrepreneurship" class="whoflex-checkbox">
+    <label for="entrepreneurship">Entrepreneurship</label>
+</li>
+<li>
+    <input type="checkbox" id="communications" name="Communications" class="whoflex-checkbox">
+    <label for="communications">Communications</label>
+</li>
+<li>
+    <input type="checkbox" id="leadership-teamwork" name="Leadership & Teamwork" class="whoflex-checkbox">
+    <label for="leadership-teamwork">Leadership & Teamwork</label>
+</li>
+<li>
+    <input type="checkbox" id="sales" name="Sales" class="whoflex-checkbox">
+    <label for="sales">Sales</label>
+</li>
+<li>
+    <input type="checkbox" id="customer-service" name="Customer Service" class="whoflex-checkbox">
+    <label for="customer-service">Customer Service</label>
+</li>
+<li>
+    <input type="checkbox" id="management" name="Management" class="whoflex-checkbox">
+    <label for="management">Management</label>
+</li>
+<li>
+    <input type="checkbox" id="human-resources" name="Human Resources" class="whoflex-checkbox">
+    <label for="human-resources">Human Resources</label>
+</li>
+<li>
+    <input type="checkbox" id="operations" name="Operations" class="whoflex-checkbox">
+    <label for="operations">Operations</label>
+</li>
+<li>
+    <input type="checkbox" id="business-software" name="Business Software" class="whoflex-checkbox">
+    <label for="business-software">Business Software</label>
+</li>
+<li>
+    <input type="checkbox" id="business-analysis-strategies" name="Business Analysis & Strategies" class="whoflex-checkbox">
+    <label for="business-analysis-strategies">Business Analysis & Strategies</label>
+</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <h3 type="button" class="accordion__title-text" tabindex="0">
+                    <svg class="svg-desktop" width="22" height="28" viewBox="0 0 22 28" fill="none">
+                        <path d="M11.6345 16.2274L11.6344 16.2274C11.2836 15.8869 10.9348 15.8035 10.6686 15.9164L11.6345 16.2274ZM11.6345 16.2274C11.9985 16.5808 12.5796 16.5716 12.9322 16.2069C13.2848 15.8423 13.2756 15.2605 12.9118 14.9073L12.9117 14.9073M11.6345 16.2274L12.9117 14.9073M12.9117 14.9073C12.5799 14.5851 12.2116 14.3475 11.8266 14.2009V13.4103C11.8266 12.903 11.416 12.4911 10.9089 12.4911C10.4018 12.4911 9.99126 12.903 9.99126 13.4103V14.2076C9.97844 14.2128 9.96558 14.2181 9.9527 14.2235L9.95267 14.2235M12.9117 14.9073L9.95267 14.2235M9.95267 14.2235C9.04344 14.6094 8.45593 15.4982 8.45593 16.4873M9.95267 14.2235L8.45593 16.4873M10.0274 19.6554L10.0274 19.6554C10.4169 20.1202 10.8141 20.2582 11.1203 20.1465L10.0274 19.6554ZM10.0274 19.6554C9.70142 19.2665 9.12245 19.216 8.73427 19.5427C8.34627 19.8692 8.296 20.4489 8.62178 20.8376M10.0274 19.6554L10.2913 16.4873M10.2913 16.4873C10.2913 16.8289 10.5688 17.1065 10.9089 17.1065C12.2619 17.1065 13.3619 18.2092 13.3619 19.5642C13.3619 20.5655 12.7487 21.471 11.8266 21.8439V22.6411C11.8266 23.1485 11.4161 23.5603 10.909 23.5603C10.4019 23.5603 9.99131 23.1485 9.99131 22.6411V21.8522C9.49295 21.6618 9.02438 21.3179 8.62178 20.8376M10.2913 16.4873C10.2913 16.2375 10.4394 16.0137 10.6686 15.9164L10.2913 16.4873ZM8.62178 20.8376L8.73671 20.7412L8.62179 20.8376C8.62178 20.8376 8.62178 20.8376 8.62178 20.8376ZM8.45593 16.4873C8.45593 17.8423 9.55592 18.945 10.9089 18.945M8.45593 16.4873L10.9089 18.945M10.9089 18.945C11.2491 18.945 11.5266 19.2226 11.5266 19.5642M10.9089 18.945L11.5266 19.5642M11.5266 19.5642C11.5266 19.8238 11.3628 20.058 11.1203 20.1465L11.5266 19.5642Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M18.1432 12.4572C17.2603 11.3688 16.2547 10.4898 15.1511 9.84261C15.2991 9.63883 15.4177 9.40961 15.4999 9.15984L15.4999 9.15969C15.8833 7.98982 15.3594 6.60951 14.0065 6.08548L15.8766 2.81789L15.8766 2.81788C16.1719 2.30174 15.9069 1.64412 15.3368 1.47804C13.9062 1.06126 12.4193 0.85 10.9172 0.85C9.41504 0.85 7.92812 1.06126 6.49757 1.47804C5.92672 1.64432 5.66281 2.30241 5.95773 2.81788L5.95774 2.81789L7.82784 6.08551C6.48006 6.60748 5.94964 7.98567 6.3346 9.1603L6.33464 9.16043C6.41655 9.40963 6.53515 9.63869 6.68345 9.84249C5.57983 10.4897 4.57417 11.3687 3.69116 12.4572L3.80765 12.5517L3.69116 12.4572C1.84717 14.7304 0.7875 17.5995 0.7875 20.3333C0.7875 21.752 1.07003 22.9101 1.58863 23.8478C2.10757 24.7861 2.85825 25.4954 3.78109 26.023C5.62077 27.0747 8.14878 27.4064 10.9172 27.4064C13.6875 27.4064 16.2155 27.0741 18.0547 26.0221C18.9773 25.4944 19.7276 24.7851 20.2463 23.8468C20.7646 22.9092 21.0468 21.7514 21.0468 20.3333C21.0468 17.5995 19.9872 14.7304 18.1432 12.4572ZM12.4423 7.56103L12.4432 7.5612L12.446 7.56175L12.447 7.56193C12.4472 7.56197 12.4474 7.56201 12.4476 7.56206C12.7547 7.62383 13.0598 7.70419 13.3616 7.80341C13.6853 7.91032 13.8625 8.26171 13.7564 8.58559C13.6822 8.81086 13.4923 8.96829 13.2654 9.00395C12.496 8.76591 11.7109 8.64487 10.9172 8.64487C10.1249 8.64487 9.34111 8.76545 8.57307 9.00262C8.34193 8.96804 8.15142 8.80925 8.0781 8.58619C7.97177 8.26143 8.14925 7.91029 8.47149 7.80382C9.76816 7.37762 11.1241 7.29697 12.4423 7.56103ZM10.9172 2.68846C11.8489 2.68846 12.7735 2.78025 13.6785 2.96202L12.1407 5.64917C11.3275 5.54419 10.507 5.54424 9.69372 5.64922L8.1558 2.96202C9.06079 2.78025 9.98548 2.68846 10.9172 2.68846ZM10.9172 25.5782C7.92421 25.5782 5.85004 25.185 4.52663 24.3386C3.2193 23.5025 2.62283 22.209 2.62283 20.3333C2.62283 18.0558 3.55342 15.5423 5.11546 13.6166C6.76239 11.5864 8.8245 10.4833 10.9172 10.4833C13.2218 10.4833 15.2513 11.8075 16.7189 13.6167C18.2809 15.5423 19.2115 18.0558 19.2115 20.3333C19.2115 22.209 18.615 23.5025 17.3077 24.3386C15.9843 25.185 13.9101 25.5782 10.9172 25.5782Z" fill="black" stroke="black" stroke-width="0.3"/>
+                    </svg>
+                    <svg class="svg-mobile" width="28" height="24" viewBox="0 0 28 24" fill="none">
+                        <path d="M21.052 2.82467L20.9577 2.70798L20.8411 2.80229L14.6482 7.80786L13.9771 7.80574L13.4218 5.24127L13.3962 5.12301H13.2752H10.7922H10.7408L10.7002 5.15454L2.4373 11.5711L2.31885 11.6631L2.41081 11.7816L3.22846 12.8349L3.32046 12.9534L3.43896 12.8614L11.3006 6.75638H12.0787L12.6326 9.3178L12.6581 9.43577L12.7788 9.43609L15.1707 9.44257L15.224 9.44271L15.2654 9.40922L21.8671 4.07196L21.9838 3.97767L21.8895 3.86103L21.052 2.82467Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M4.01245 14.517H3.95031L3.90638 14.5609L3.23964 15.2277L3.1957 15.2716V15.3337V23V23.0622L3.23964 23.1061L3.90638 23.7728L3.95031 23.8168H4.01245H12.6793H12.7414L12.7854 23.7728L13.4521 23.1061L13.496 23.0622V23V15.3337V15.2716L13.4521 15.2277L12.7854 14.5609L12.7414 14.517H12.6793H4.01245ZM4.82919 16.1502H11.8623V22.1834H4.82919V16.1502Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M1 22.184H0.85V22.334V23.6672V23.8172H1H27H27.15V23.6672V22.334V22.184H27H1Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M20.4845 0.851806L20.5002 0.75917L20.2506 0.861148L19.7727 1.05646L19.7448 1.06789L19.7234 1.08925L19.0892 1.72342L18.9832 1.82949L19.0892 1.93555L20.0319 2.87818L20.1379 2.98425L20.244 2.87818L20.6357 2.48651L22.1663 2.50025L22.18 4.03086L21.7884 4.42253L21.6823 4.5286L21.7884 4.63466L22.731 5.57729L22.8371 5.68336L22.9431 5.57729L23.5773 4.94312L23.5986 4.9218L23.61 4.8939L23.8056 4.41645L23.817 4.38845L23.8168 4.35821L23.792 1.68364L23.7914 1.62232L23.7481 1.57896L23.0878 0.918673L23.0444 0.875309L22.9831 0.874746L20.4845 0.851806Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M15.3328 10.517H15.2706L15.2267 10.5609L14.5599 11.2277L14.516 11.2716V11.3337V22.9172V22.9793L14.5599 23.0232L15.2267 23.69L15.2706 23.7339H15.3328H23.9996H24.0617L24.1057 23.69L24.7724 23.0232L24.8164 22.9793V22.9172V11.3337V11.2716L24.7724 11.2277L24.1057 10.5609L24.0617 10.517H23.9996H15.3328ZM16.1495 12.1502H23.1826V22.1005H16.1495V12.1502Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M15.7168 14.3637H15.5668V14.5137V15.8469V15.9969H15.7168H23.6128H23.7628V15.8469V14.5137V14.3637H23.6128H15.7168Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M15.6309 18.2523H15.4809V18.4023V19.7356V19.8856H15.6309H23.704H23.854V19.7356V18.4023V18.2523H23.704H15.6309Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M3.96484 18.2523H3.81484V18.4023V19.7356V19.8856H3.96484H12.038H12.188V19.7356V18.4023V18.2523H12.038H3.96484Z" fill="black" stroke="black" stroke-width="0.3"/>
+                    </svg>
+                    Finance
+                </h3>
+                <div class="accordion__body">
+                    <ul class="accordion__content">
+                        <li>
+    <input type="checkbox" id="financial-freedom" name="Financial Freedom" class="whoflex-checkbox">
+    <label for="financial-freedom">Financial Freedom</label>
+</li>
+<li>
+    <input type="checkbox" id="investing" name="Investing" class="whoflex-checkbox">
+    <label for="investing">Investing</label>
+</li>
+<li>
+    <input type="checkbox" id="passive-income" name="Passive Income" class="whoflex-checkbox">
+    <label for="passive-income">Passive Income</label>
+</li>
+<li>
+    <input type="checkbox" id="accounting" name="Accounting" class="whoflex-checkbox">
+    <label for="accounting">Accounting</label>
+</li>
+<li>
+    <input type="checkbox" id="finance" name="Finance" class="whoflex-checkbox">
+    <label for="finance">Finance</label>
+</li>
+<li>
+    <input type="checkbox" id="banking-budgeting-wealth-management" name="Banking, Budgeting & Wealth Management" class="whoflex-checkbox">
+    <label for="banking-budgeting-wealth-management">Banking, Budgeting & Wealth Management</label>
+</li>
+<li>
+    <input type="checkbox" id="credit-rating-loans-mortgages" name="Credit Rating, Loans & Mortgages" class="whoflex-checkbox">
+    <label for="credit-rating-loans-mortgages">Credit Rating, Loans & Mortgages</label>
+</li>
+<li>
+    <input type="checkbox" id="taxes" name="Taxes" class="whoflex-checkbox">
+    <label for="taxes">Taxes</label>
+</li>
+<li>
+    <input type="checkbox" id="cyrptocurrency-blockchain" name="Cyrptocurrency & Blockchain" class="whoflex-checkbox">
+    <label for="cyrptocurrency-blockchain">Cyrptocurrency & Blockchain</label>
+</li>
+<li>
+    <input type="checkbox" id="real-estate" name="Real Estate" class="whoflex-checkbox">
+    <label for="real-estate">Real Estate</label>
+</li>
+<li>
+    <input type="checkbox" id="finance-certification-test-prep" name="Finance Certification & Test Prep" class="whoflex-checkbox">
+    <label for="finance-certification-test-prep">Finance Certification & Test Prep</label>
+</li>
+<li>
+    <input type="checkbox" id="money-management-tools" name="Money Management Tools" class="whoflex-checkbox">
+    <label for="money-management-tools">Money Management Tools</label>
+</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <h3 type="button" class="accordion__title-text" tabindex="0">
+                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none">
+                        <path d="M13.4203 10.5473V12.5971H12.1801H8.78218H7.99958C7.51172 12.5971 7.09949 13.0075 7.09949 13.4987V14.9995V17.0493H5.86178H2.45879H1.68369C1.19582 17.0493 0.783594 17.4597 0.783594 17.9509V19.4943V21.9722V22.5409C0.783594 23.029 1.19269 23.4425 1.68369 23.4425H2.20376H3.61895H5.71172H8.26458H11.0625H13.8853H16.5182H18.7435H20.3437C20.4268 23.4425 20.5106 23.4428 20.5948 23.4431C20.7644 23.4436 20.9355 23.4442 21.1047 23.4425H21.1364C21.6242 23.4425 22.0365 23.0322 22.0365 22.5409V21.1955V17.976V14.0826V10.7078C22.0365 10.5287 22.0376 10.3484 22.0387 10.1673C22.0408 9.8105 22.043 9.45089 22.0368 9.09266C22.0372 9.07615 22.0371 9.05952 22.0364 9.04279C22.0349 8.84621 21.962 8.65231 21.8407 8.49545C21.7785 8.41383 21.7032 8.34284 21.617 8.28649C21.5025 8.21063 21.3705 8.16116 21.2287 8.14955C21.1985 8.14649 21.1677 8.14492 21.1364 8.14492H18.8235H15.1655H14.3204C13.8325 8.14492 13.4203 8.55529 13.4203 9.04654V10.5473ZM4.07652 21.6393H2.58378V20.9975V18.8525H3.82149H7.22448H7.99958C8.48745 18.8525 8.89968 18.4422 8.89968 17.9509V16.4501V14.4003H10.1399H13.5378H14.3204C14.8083 14.4003 15.2205 13.99 15.2205 13.4987V11.998V9.94816H16.6332H20.2363V10.3946V13.614V17.5075V20.8823C20.2363 21.0609 20.2349 21.241 20.2335 21.4219C20.233 21.4942 20.2324 21.5667 20.2319 21.6393H19.2011H17.1083H14.5555H11.7576H8.9347H6.30184H4.07652Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M2.54947 13.4542L2.55058 13.4535L2.55963 13.4471C2.9216 13.1937 3.28379 12.9402 3.64351 12.6866C3.91812 12.4942 4.19113 12.3032 4.46419 12.1121C4.72923 11.9266 4.99433 11.7411 5.26099 11.5543L5.26103 11.5543L7.23364 10.1714C7.50063 9.98464 7.76748 9.79768 8.03439 9.61067C8.48783 9.29299 8.94145 8.97517 9.39626 8.65822L9.39644 8.65809C9.7597 8.40416 10.1191 8.15233 10.4784 7.90057C10.8441 7.64431 11.2097 7.3881 11.5792 7.12979L11.5795 7.12959C11.9259 6.88625 12.2658 6.64853 12.6058 6.4107C12.9399 6.17709 13.2741 5.94337 13.6146 5.70414C14.1872 5.30326 14.7597 4.90247 15.3346 4.5017L15.3351 4.50138C15.646 4.28288 15.957 4.06587 16.2692 3.84795C16.3684 3.77868 16.4678 3.70931 16.5674 3.63978L16.5681 3.63931C16.6651 3.57078 16.7627 3.50281 16.861 3.43449L16.8614 3.43416C16.9589 3.36636 17.0569 3.29821 17.1543 3.22939C17.1599 3.22559 17.1655 3.22155 17.1689 3.21911L17.1774 3.2131L17.1775 3.21315L17.1809 3.21073C17.3586 3.08467 17.516 2.92377 17.5837 2.68006L17.5837 2.67996C17.6433 2.46515 17.6194 2.18198 17.4905 1.98033L17.3642 2.06113L17.4905 1.98033C17.3681 1.78884 17.1677 1.63962 16.9471 1.57198C16.725 1.50383 16.4701 1.51555 16.2535 1.66729C16.1855 1.71398 16.1183 1.76121 16.0518 1.80792L16.0515 1.8081C15.9845 1.85515 15.9183 1.90167 15.8515 1.94748L15.8504 1.94827L15.8411 1.95477C15.4792 2.20812 15.1171 2.46163 14.7574 2.71517C14.483 2.90743 14.2102 3.09835 13.9373 3.28929C13.6721 3.47487 13.4069 3.66049 13.14 3.84741L13.14 3.84744L11.1674 5.23037C11.1673 5.23039 11.1673 5.23041 11.1673 5.23044C10.9003 5.41713 10.6335 5.60408 10.3666 5.79107C9.91316 6.10875 9.45955 6.42656 9.00475 6.74351L9.00457 6.74363C8.64143 6.99749 8.28211 7.24927 7.92288 7.501C7.55708 7.75733 7.19137 8.01359 6.82178 8.27193L6.82148 8.27214C6.47515 8.51547 6.13526 8.75317 5.79522 8.99098C5.46118 9.2246 5.12698 9.45833 4.78638 9.69759C4.21381 10.0985 3.64133 10.4993 3.0664 10.9L3.06594 10.9003C2.75487 11.1189 2.44385 11.336 2.13153 11.554C2.03237 11.6232 1.93308 11.6925 1.83361 11.7619L1.83294 11.7624C1.73595 11.8309 1.63826 11.8989 1.54005 11.9672L1.53944 11.9677C1.44202 12.0354 1.34409 12.1036 1.2467 12.1724C1.24111 12.1761 1.2355 12.1802 1.23209 12.1826L1.22358 12.1886L1.22355 12.1886L1.22013 12.191C1.04237 12.3171 0.885054 12.478 0.817324 12.7217L0.817298 12.7218C0.757748 12.9366 0.781563 13.2197 0.910473 13.4214L0.910765 13.4218C1.03315 13.6118 1.23339 13.7608 1.45365 13.8287C1.67556 13.8972 1.93062 13.8864 2.14752 13.7344C2.21548 13.6878 2.28271 13.6405 2.34918 13.5938L2.3495 13.5936C2.41649 13.5466 2.48272 13.5001 2.54947 13.4542Z" fill="black" stroke="black" stroke-width="0.3"/>
+                        <path d="M11.7119 2.20262C11.8197 2.37006 12.0108 2.57509 12.2645 2.6153M11.7119 2.20262L11.838 2.12141L11.712 2.20278C11.712 2.20273 11.712 2.20267 11.7119 2.20262ZM11.7119 2.20262C11.5723 1.98627 11.5692 1.72512 11.6165 1.51037L11.6167 1.50974L11.6167 1.50974C11.6674 1.28413 11.8483 1.07181 12.0326 0.964544L12.1081 1.09417L12.0326 0.964523C12.2615 0.83127 12.4905 0.83612 12.7092 0.870869L12.7111 0.871165L12.7111 0.871176C12.885 0.90106 13.0567 0.928486 13.2316 0.956023L13.2322 0.956115L13.2322 0.956116L15.5121 1.32436C15.5122 1.32437 15.5122 1.32438 15.5123 1.32439C15.748 1.36189 15.9844 1.40001 16.2206 1.4381L16.2225 1.43841C16.4595 1.47663 16.6962 1.51481 16.9323 1.55236L16.9325 1.55239C17.1838 1.59268 17.3748 1.79788 17.4824 1.96505L17.4826 1.96525C17.6264 2.18941 17.6133 2.44264 17.5793 2.64932L17.5792 2.65031C17.5493 2.82463 17.522 2.99667 17.4945 3.17191L17.4944 3.17249L17.1269 5.4571C17.1269 5.45712 17.1269 5.45713 17.1269 5.45715C17.0895 5.69345 17.0514 5.93037 17.0134 6.16711L17.0131 6.16893C16.975 6.40635 16.9368 6.64359 16.8994 6.88017L16.8993 6.88035C16.8592 7.13187 16.6546 7.32321 16.4876 7.43114M12.2645 2.6153L16.4876 7.43114M12.2645 2.6153L12.2645 2.61531C12.5006 2.65286 12.7374 2.69104 12.9743 2.72925L12.9762 2.72956C13.2124 2.76765 13.4488 2.80578 13.6846 2.84328C13.6846 2.84329 13.6846 2.8433 13.6847 2.84331L15.6834 3.16613C15.659 3.31869 15.6346 3.47121 15.6105 3.62347C15.6104 3.62356 15.6104 3.62364 15.6104 3.62373L15.4267 4.76586L15.2429 5.90834L15.2428 5.90893C15.2154 6.08416 15.188 6.2562 15.1582 6.43052L15.1581 6.43052L15.1579 6.43238C15.1232 6.65147 15.1184 6.88064 15.2513 7.10983C15.3582 7.29441 15.5701 7.47575 15.7955 7.52665L15.7962 7.52679C16.0106 7.57424 16.2715 7.57116 16.4876 7.43114" fill="black" stroke="black" stroke-width="0.3"/>
+                    </svg>
+                    Career
+                </h3>
+                <div class="accordion__body">
+                    <ul class="accordion__content">
+                        <li>
+    <input type="checkbox" id="resumes" name="Resumes" class="whoflex-checkbox">
+    <label for="resumes">Resumes</label>
+</li>
+<li>
+    <input type="checkbox" id="interviewing" name="Interviewing" class="whoflex-checkbox">
+    <label for="interviewing">Interviewing</label>
+</li>
+<li>
+    <input type="checkbox" id="networking" name="Networking" class="whoflex-checkbox">
+    <label for="networking">Networking</label>
+</li>
+<li>
+    <input type="checkbox" id="career-path" name="Career Path" class="whoflex-checkbox">
+    <label for="career-path">Career Path</label>
+</li>
+<li>
+    <input type="checkbox" id="career-consulting" name="Career Consulting" class="whoflex-checkbox">
+    <label for="career-consulting">Career Consulting</label>
+</li>
+<li>
+    <input type="checkbox" id="retirement" name="Retirement" class="whoflex-checkbox">
+    <label for="retirement">Retirement</label>
+</li>
+<li>
+    <input type="checkbox" id="side-hustles" name="Side Hustles" class="whoflex-checkbox">
+    <label for="side-hustles">Side Hustles</label>
+</li>
+<li>
+    <input type="checkbox" id="freelancing" name="Freelancing" class="whoflex-checkbox">
+    <label for="freelancing">Freelancing</label>
+</li>
+<li>
+    <input type="checkbox" id="remote-working" name="Remote Working" class="whoflex-checkbox">
+    <label for="remote-working">Remote Working</label>
+</li>
+<li>
+    <input type="checkbox" id="youTube-podcasts-selfPublishing" name="YouTube, Podcasts & Self-Publishing" class="whoflex-checkbox">
+    <label for="youTube-podcasts-selfPublishing">YouTube, Podcasts & Self-Publishing</label>
+</li>
+<li>
+    <input type="checkbox" id="job-offer-negotiations" name="Job Offer Negotiations" class="whoflex-checkbox">
+    <label for="job-offer-negotiations">Job Offer Negotiations</label>
+</li>
+<li>
+    <input type="checkbox" id="performance-reviews-salary-negotiations" name="Performance Reviews & Salary Negotiations" class="whoflex-checkbox">
+    <label for="performance-reviews-salary-negotiations">Performance Reviews & Salary Negotiations</label>
+</li>
+<li>
+    <input type="checkbox" id="job-changes-and-resignation" name="Job Changes and Resignation" class="whoflex-checkbox">
+    <label for="job-changes-and-resignation">Job Changes and Resignation</label>
+</li>
+<li>
+    <input type="checkbox" id="certification-prep" name="Certification & Prep" class="whoflex-checkbox">
+    <label for="certification-prep">Certification & Prep</label>
+</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <h3 type="button" class="accordion__title-text" tabindex="0">
+                    <svg width="31" height="29" viewBox="0 0 31 29" fill="none">
+                        <path d="M10.6148 10.1121C9.2917 11.302 8.44751 12.9344 8.24009 14.703L8.24 14.703L8.23604 14.7373C7.95584 17.1635 8.92885 19.5656 10.8177 21.1097C11.2801 21.4876 11.551 22.0522 11.5571 22.6502V27.9999V28.0999H11.6571H19.2937H19.3937V27.9999V22.7121C19.3975 22.1351 19.644 21.5866 20.0729 21.2015C21.73 19.8486 22.7123 17.8362 22.7606 15.6948C22.8091 13.5529 21.918 11.4971 20.3226 10.0705L20.3222 10.0701C18.9801 8.88393 17.2501 8.23293 15.4607 8.24064C13.6711 8.24834 11.9466 8.91429 10.6148 10.1121ZM18.7343 19.6168L18.7342 19.6168L18.7312 19.6194C18.0939 20.1773 17.645 20.9187 17.4449 21.741H13.5063C13.2987 20.8636 12.8146 20.0755 12.125 19.4939L12.125 19.4939L12.1234 19.4926C10.7703 18.397 10.0794 16.6775 10.2972 14.9479L10.2974 14.9464C10.427 13.7739 10.9493 12.6798 11.7789 11.843C12.6089 11.0061 13.6969 10.4753 14.8661 10.3378L14.9194 10.3316L14.9195 10.3314C16.383 10.1668 17.8483 10.6345 18.9474 11.6192C20.0914 12.6476 20.727 14.1277 20.686 15.6674C20.645 17.2072 19.9314 18.651 18.7343 19.6168ZM13.6196 26.0337V23.8074H17.3311V26.0337H13.6196Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M14.5417 0.9H14.4417V1V5.81825V5.91825H14.5417H16.4044H16.5044V5.81825V1V0.9H16.4044H14.5417Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M0.945312 14.5245H0.845312V14.6245V16.491V16.591H0.945312H5.75704H5.85704V16.491V14.6245V14.5245H5.75704H0.945312Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M25.1897 14.5245H25.0897V14.6245V16.491V16.591H25.1897H30.0014H30.1014V16.491V14.6245V14.5245H30.0014H25.1897Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M4.49172 25.1171L4.42122 25.1878L4.49172 25.2584L5.80872 26.5781L5.8795 26.649L5.95028 26.5781L9.35254 23.1689L9.42304 23.0982L9.35254 23.0276L8.03554 21.7079L7.96476 21.637L7.89398 21.7079L4.49172 25.1171Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M21.605 7.94866L21.5345 8.0193L21.605 8.08994L22.922 9.40962L22.9928 9.48055L23.0636 9.40962L26.4658 6.00043L26.5363 5.92979L26.4658 5.85915L25.1488 4.53947L25.078 4.46854L25.0073 4.53947L21.605 7.94866Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M4.47536 5.86892L4.40486 5.93956L4.47536 6.01019L7.87546 9.41722L7.94624 9.48814L8.01702 9.41722L9.33402 8.09754L9.40452 8.0269L9.33402 7.95626L5.93392 4.54923L5.86314 4.47831L5.79236 4.54923L4.47536 5.86892Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M21.6131 23.0181L21.5426 23.0887L21.6131 23.1594L25.0132 26.5664L25.0839 26.6373L25.1547 26.5664L26.4717 25.2467L26.5422 25.1761L26.4717 25.1054L23.0716 21.6984L23.0008 21.6275L22.9301 21.6984L21.6131 23.0181Z" fill="black" stroke="black" stroke-width="0.2"/>
+                    </svg>
+                    Mindset
+                </h3>
+                <div class="accordion__body">
+                    <ul class="accordion__content">
+                        <li>
+    <input type="checkbox" id="motivational" name="Motivational" class="whoflex-checkbox">
+    <label for="motivational">Motivational</label>
+</li>
+<li>
+    <input type="checkbox" id="anxiety" name="Anxiety" class="whoflex-checkbox">
+    <label for="anxiety">Anxiety</label>
+</li>
+<li>
+    <input type="checkbox" id="relationships" name="Relationships" class="whoflex-checkbox">
+    <label for="relationships">Relationships</label>
+</li>
+<li>
+    <input type="checkbox" id="morning-routines" name="Morning Routines" class="whoflex-checkbox">
+    <label for="morning-routines">Morning Routines</label>
+</li>
+<li>
+    <input type="checkbox" id="stress-management" name="Stress Management" class="whoflex-checkbox">
+    <label for="stress-management">Stress Management</label>
+</li>
+<li>
+    <input type="checkbox" id="self-esteem" name="Self-Esteem" class="whoflex-checkbox">
+    <label for="self-esteem">Self-Esteem</label>
+</li>
+<li>
+    <input type="checkbox" id="mid-life-management" name="Mid-Life Management" class="whoflex-checkbox">
+    <label for="mid-life-management">Mid-Life Management</label>
+</li>
+<li>
+    <input type="checkbox" id="mindfulness" name="Mindfulness" class="whoflex-checkbox">
+    <label for="mindfulness">Mindfulness</label>
+</li>
+<li>
+    <input type="checkbox" id="meditation" name="Meditation" class="whoflex-checkbox">
+    <label for="meditation">Meditation</label>
+</li>
+<li>
+    <input type="checkbox" id="new-age" name="New Age" class="whoflex-checkbox">
+    <label for="new-age">New Age</label>
+</li>
+<li>
+    <input type="checkbox" id="spiritual" name="Spiritual" class="whoflex-checkbox">
+    <label for="spiritual">Spiritual</label>
+</li>
+<li>
+    <input type="checkbox" id="psychology-neuroscience" name="Psychology & Neuroscience" class="whoflex-checkbox">
+    <label for="psychology-neuroscience">Psychology & Neuroscience</label>
+</li>
+<li>
+    <input type="checkbox" id="personal-transformation" name="Personal Transformation" class="whoflex-checkbox">
+    <label for="personal-transformation">Personal Transformation</label>
+</li>
+<li>
+    <input type="checkbox" id="productivity" name="Productivity" class="whoflex-checkbox">
+    <label for="productivity">Productivity</label>
+</li>
+<li>
+    <input type="checkbox" id="time-management" name="Time Management" class="whoflex-checkbox">
+    <label for="time-management">Time Management</label>
+</li>
+<li>
+    <input type="checkbox" id="memory-study-skills" name="Memory & Study Skills" class="whoflex-checkbox">
+    <label for="memory-study-skills">Memory & Study Skills</label>
+</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <h3 type="button" class="accordion__title-text" tabindex="0">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none">
+                        <path d="M21.3777 11.8788C19.2323 9.72905 15.814 9.61974 13.5232 11.5143C11.2322 9.61951 7.81396 9.72882 5.66865 11.8788C3.41418 14.1379 3.37769 17.8182 5.63238 20.1137L11.7776 26.2714C12.2504 26.7452 12.8686 27.0001 13.523 27.0001C14.1411 27.0001 14.7593 26.7449 15.2684 26.2714L21.4136 20.1137C23.6323 17.8183 23.6323 14.1382 21.3778 11.8788H21.3777ZM19.8139 18.5833L13.705 24.7047C13.5959 24.814 13.4503 24.814 13.3778 24.7047L7.30487 18.6196L7.2686 18.5833C5.85042 17.1622 5.88672 14.8666 7.2686 13.4455C8.68677 12.0245 10.9777 12.0245 12.3959 13.4455L12.7594 13.8097C12.9775 14.0283 13.2322 14.1376 13.5594 14.1376C13.8503 14.1376 14.1413 14.0283 14.3231 13.8097L14.7229 13.4092C16.1411 12.0245 18.432 12.0245 19.8502 13.4092C21.2321 14.8302 21.2321 17.1622 19.8139 18.5833L19.8139 18.5833Z" fill="black"/>
+                        <path d="M13.5216 5.28344C14.1398 5.28344 14.6126 4.77333 14.6126 4.19025V1.09319C14.6126 0.473785 14.1035 0 13.5216 0C12.9397 0 12.4307 0.510112 12.4307 1.09319V4.19025C12.4307 4.80991 12.9035 5.28344 13.5216 5.28344Z" fill="black"/>
+                        <path d="M3.48263 8.818C3.70077 9.03659 3.9917 9.14588 4.24639 9.14588C4.50108 9.14588 4.79174 9.03659 5.01015 8.818C5.44643 8.38083 5.44643 7.68851 5.01015 7.25132L2.82822 5.06494C2.39193 4.62777 1.70101 4.62777 1.26472 5.06494C0.828421 5.50211 0.828434 6.19444 1.26472 6.63162L3.48263 8.818Z" fill="black"/>
+                        <path d="M22.7866 9.14589C23.0776 9.14589 23.332 9.0366 23.5504 8.81801L25.7323 6.63163C26.1686 6.19446 26.1686 5.50213 25.7323 5.06494C25.296 4.62776 24.6051 4.62777 24.1688 5.06494L21.9869 7.25133C21.5506 7.6885 21.5506 8.38082 21.9869 8.81801C22.2048 9.0366 22.4957 9.14589 22.7866 9.14589Z" fill="black"/>
+                    </svg>
+                    Lifestyle
+                </h3>
+                <div class="accordion__body">
+                    <ul class="accordion__content">
+                        <li>
+    <input type="checkbox" id="health" name="Health" class="whoflex-checkbox">
+    <label for="health">Health</label>
+</li>
+<li>
+    <input type="checkbox" id="healthy-cooking-eating" name="Healthy Cooking & Eating" class="whoflex-checkbox">
+    <label for="healthy-cooking-eating">Healthy Cooking & Eating</label>
+</li>
+<li>
+    <input type="checkbox" id="home" name="Home" class="whoflex-checkbox">
+    <label for="home">Home</label>
+</li>
+<li>
+    <input type="checkbox" id="diet" name="Diet" class="whoflex-checkbox">
+    <label for="diet">Diet</label>
+</li>
+<li>
+    <input type="checkbox" id="fitness" name="Fitness" class="whoflex-checkbox">
+    <label for="fitness">Fitness</label>
+</li>
+<li>
+    <input type="checkbox" id="parenting" name="Parenting" class="whoflex-checkbox">
+    <label for="parenting">Parenting</label>
+</li>
+<li>
+    <input type="checkbox" id="mental-health" name="Mental Health" class="whoflex-checkbox">
+    <label for="mental-health">Mental Health</label>
+</li>
+<li>
+    <input type="checkbox" id="sleep" name="Sleep" class="whoflex-checkbox">
+    <label for="sleep">Sleep</label>
+</li>
+<li>
+    <input type="checkbox" id="languages" name="Languages" class="whoflex-checkbox">
+    <label for="languages">Languages</label>
+</li>
+<li>
+    <input type="checkbox" id="travel" name="Travel" class="whoflex-checkbox">
+    <label for="travel">Travel</label>
+</li>
+<li>
+    <input type="checkbox" id="habits" name="Habits" class="whoflex-checkbox">
+    <label for="habits">Habits</label>
+</li>
+<li>
+    <input type="checkbox" id="arts-crafts-hobbies" name="Arts, Crafts, & Hobbies" class="whoflex-checkbox">
+    <label for="arts-crafts-hobbies">Arts, Crafts, & Hobbies</label>
+</li>
+<li>
+    <input type="checkbox" id="beauty-style" name="Beauty & Style" class="whoflex-checkbox">
+    <label for="beauty-style">Beauty & Style</label>
+</li>
+<li>
+    <input type="checkbox" id="fasting" name="Fasting" class="whoflex-checkbox">
+    <label for="fasting">Fasting</label>
+</li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+        <div class="step step-3">
+    <h2 class="instructor-app__subtitle">3. Qualifications</h2>
+    <div class="whoflex-textarea__wrap">
+        <label for="other-topics">Are there any other topics not listed here that you are qualified to teach or to coach? (100 character limit)</label>
+        <textarea class="whoflex-textarea" id="other-topics" name="other-topics" maxlength="100"></textarea>
+    </div>
+
+    <div class="whoflex-textarea__wrap">
+        <label for="classes-coaching">Please tell us about classes or coaching you’d like to offer at Whoflex (2000 character limit)*</label>
+        <textarea class="whoflex-textarea" id="classes-coaching" name="classes-coaching" maxlength="2000" required></textarea>
+    </div>
+
+    <div class="whoflex-textarea__wrap">
+        <label for="share-link">Share a link to one of your videos which may help us to review your Whoflex application. (2000 character limit)</label>
+        <textarea class="whoflex-textarea" id="share-link" name="share-link" maxlength="2000"></textarea>
+    </div>
+    <div class="whoflex-textarea__wrap">
+        <label for="share-link">Please Upload Your Resume Here</label>
+        <input class="whoflex-input" id="upload-file" type="file"/>
+    </div>
+
+    <div class="whoflex-agreement">We may use the data you provide to review your application and contact you with information about Whoflex products. To learn more, see our
+        <a href="#" target="_blank" class="whoflex-link">Privacy Policy</a>.
+    </div>
+
+    <div class="whoflex-agreement">
+        <input type="checkbox" id="agreement" name="agreement" class="whoflex-checkbox">
+        <label for="agreement">
+            I accept Whoflex's
+            <a href="#" class="whoflex-link" target="_blank">Terms of Use</a> and
+            <a href="#" class="whoflex-link" target="_blank">Privacy Policy</a>.
+        </label>
+    </div>
+
+</div>
+
+        <div class="instructor-app__buttons">
+          <button class="whoflex-button whoflex-button__prev" type="button">previous</button>
+          <button class="whoflex-button whoflex-button__next" type="button">Next</button>
+        </div>
+        <div class="step__wrapper">
+          <div class="step__point" id="point1">Step 1</div>
+          <div class="step__point" id="point2">Step 2</div>
+          <div class="step__point" id="point3">Step 3</div>
+        </div>
+      </form>
+    </div>
+  </secrion>
+
+  <script src="js/script.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/instructor-app.js"></script>
+</body>
+</html>
