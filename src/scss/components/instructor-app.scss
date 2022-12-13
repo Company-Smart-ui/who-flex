@@ -116,7 +116,60 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
+  &__wrapper{
+    position: relative;
+    @include lg{
+      margin-bottom: 27px;
+    }
+    &.upload{
+      .input-file{
+        &__button-text{
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 21px;
+          color: #111111;
+          &:hover{
+            border-bottom: 2px solid transparent;
+          }
+        }
+        &__button{
+          justify-content: flex-start;
+          background-color: #EFF3FE;
+          border: 1px solid #276EF1;
+          margin-bottom: 11px;
+          &-text{
+            width: calc(100% - 40px);
+          }
+        }
+      }
+      .icon-done{
+        display: block;
+      }
+    }
+    .upload-bottom{
+      display: flex;
+      justify-content: space-between;
+    }
+    .tryAgain{
+      border: none;
+      background-color: transparent;
+      color: #e0c463;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    .icon-done{
+      display: none;
+      position: absolute;
+      right: 18px;
+    }
+  }
 
+  &__text-upload{
+    font-size: 14px;
+    color: #111111;
+    margin-bottom: 0 !important;
+  }
   &__button-text {
     line-height: 1;
     margin-top: 1px;
@@ -126,12 +179,12 @@
     }
   }
   &__button {
-    text-align: center;
     color: #E0C463;
     font-size: 16px;
     font-weight: 700;
 
     width: 100%;
+    max-width: none !important;
     min-height: 62px;
 
     display: -webkit-box;
@@ -144,13 +197,13 @@
     -ms-flex-pack: start;
     justify-content: center;
 
-    margin: 0 auto;
-    padding: 15px;
+    padding: 15px 20px;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 6px;
 
     cursor: pointer;
+    overflow: hidden;
     @include lg{
       font-size: 17px;
       border-radius: 10px;

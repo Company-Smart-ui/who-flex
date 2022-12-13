@@ -17,9 +17,13 @@
     @include lg{
       font-size: 14px;
     }
+    .whoflex-textarea__wrap label{
+      max-width: 410px;
+    }
     .whoflex-agreement{
       font-size: 14px;
       margin-bottom: 15px;
+      color: #111111;
       @include lg{
         margin-bottom: 22px;
       }
@@ -47,6 +51,7 @@
       }
     }
   }
+
   &__wrapper{
     display: flex;
     gap: 6px;

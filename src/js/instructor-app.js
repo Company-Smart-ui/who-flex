@@ -8,6 +8,7 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const instructorAppEmail = document.getElementById('email');
 const password = document.getElementById('password');
+const agreement = document.getElementById('agreement');
 const btnPrev = document.querySelector(".whoflex-button__prev");
 const btnNext = document.querySelector(".whoflex-button__next");
 
@@ -22,7 +23,9 @@ function handleClick() {
     }
 };
 function btnNextStep3(){
-    btnNext.setAttribute('type', 'submit');
+    if(agreement.checked){
+        btnNext.setAttribute('type', 'submit');
+    }
 }
 function activeStep1(){
     btnNext.removeEventListener('click', activeStep2);
@@ -85,19 +88,28 @@ function notActiveStep3(){
 
 
 (function (){
-    let inputs = document.querySelectorAll('.input-file');
+    const inputs = document.querySelectorAll('.input-file');
+    const paperClip = document.querySelector('.paperClip');
+    const iconPdf = document.querySelector('.iconPdf');
+    const buttonText = document.querySelector('.input-file__button-text');
+    const inputFile = document.querySelector('.input-file__wrapper');
+    const uploadBottom = document.querySelector('.upload-bottom');
+    const tryAgain = document.querySelector('.tryAgain');
     Array.prototype.forEach.call(inputs, function (input) {
-        let label = input.nextElementSibling,
+        const label = input.nextElementSibling,
             labelVal = label.querySelector('.input-file__button-text').innerText;
 
         input.addEventListener('change', function (e) {
-            // let countFiles = '';
-            // if (this.files && this.files.length >= 1)
-            //     countFiles = this.files.length;
-
-            // if (countFiles)
-            if (label)
-                label.querySelector('.input-file__button-text').innerText = input.files[0].name;
+            if (label) {
+                inputFile.classList.add('upload');
+                buttonText.innerText = input.files[0].name;
+                paperClip.classList.add('d-none');
+                iconPdf.classList.remove('d-none');
+                uploadBottom.classList.remove('d-none');
+                tryAgain.addEventListener('click', function (){
+                    input.click();
+                })
+            }
             else
                 label.querySelector('.input-file__button-text').innerText = labelVal;
         });
