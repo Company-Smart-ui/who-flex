@@ -9,6 +9,9 @@
   min-height: 100vh;
   input {
     font-size: 16px;
+    @include lg{
+      font-size: 18px;
+    }
 
     &::placeholder {
       color: #999999;
@@ -23,8 +26,9 @@
     box-shadow: 0 0 18px 9px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
     margin: 50px 16px 70px;
+    box-sizing: border-box;
     @include sm{
-      padding: 35px 50px 40px;
+      padding: 35px 52.5px 40px;
     }
   }
 
@@ -32,6 +36,7 @@
     font-size: 24px;
     font-weight: 400;
     margin: 0 0 40px;
+    color: #333333;
     @include lg {
       font-size: 29px;
       margin-bottom: 55px;
@@ -40,6 +45,7 @@
   &__subtitle{
     font-size: 18px;
     font-weight: 400;
+    color: #333333;
     margin: 0 0 9px;
     position: relative;
     @include lg{
@@ -80,10 +86,19 @@
   &__wrap-input{
     margin-bottom: 11px;
     @include lg{
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
     &:last-child{
       margin-bottom: 0;
     }
+  }
+  .whoflex-input{
+    padding: 14px 16px;
+    @include lg{
+      padding: 21px 16px;
+    }
+  }
+  .helper-text{
+    color: #666666;
   }
 }
