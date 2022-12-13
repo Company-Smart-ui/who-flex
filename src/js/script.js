@@ -96,13 +96,17 @@ function showEmailSignUpEmail(e) {
 
 }
 
-signInTrigger.addEventListener("click", toggleSignInModal);
-signUpTrigger.addEventListener("click", toggleSignUpModal);
-signInCloseButton.addEventListener("click", toggleSignInModal);
-signUpCloseButton.addEventListener("click", toggleSignUpModal);
-window.addEventListener("click", windowOnClick);
-signUpButton.addEventListener('click', (e) => hideEmailSignUpEmail(e))
-signUpBackButton.addEventListener('click', (e) => showEmailSignUpEmail(e))
+if(signInModal){
+    signInTrigger.addEventListener("click", toggleSignInModal);
+    signUpTrigger.addEventListener("click", toggleSignUpModal);
+    signInCloseButton.addEventListener("click", toggleSignInModal);
+}
+if (signUpModal){
+    signUpCloseButton.addEventListener("click", toggleSignUpModal);
+    window.addEventListener("click", windowOnClick);
+    signUpButton.addEventListener('click', (e) => hideEmailSignUpEmail(e))
+    signUpBackButton.addEventListener('click', (e) => showEmailSignUpEmail(e))
+}
 
 const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
