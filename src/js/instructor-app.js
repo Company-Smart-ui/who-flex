@@ -1,6 +1,7 @@
-const step1 = document.querySelector(".step-1");
-const step2 = document.querySelector(".step-2");
-const step3 = document.querySelector(".step-3");
+const instructorApp = document.querySelector(".instructor-app");
+const step1 = document.querySelector(".wrap-step1");
+const step2 = document.querySelector(".wrap-step2");
+const step3 = document.querySelector(".wrap-step3");
 const point1 = document.getElementById('point1');
 const point2 = document.getElementById('point2');
 const point3 = document.getElementById('point3');
@@ -33,6 +34,7 @@ function activeStep1(){
 
     notActiveStep2();
     notActiveStep3();
+    instructorApp.classList.add('step1');
     point1.classList.add('active');
     step1.classList.add('active');
     step1.classList.remove('d-none');
@@ -46,6 +48,7 @@ function activeStep2(){
 
     notActiveStep1();
     notActiveStep3();
+    instructorApp.classList.add('step2');
     point2.classList.add('active');
     step2.classList.add('active');
     step2.classList.remove('d-none');
@@ -60,6 +63,7 @@ function activeStep3(){
     btnPrev.removeEventListener('click', activeStep1);
     notActiveStep1();
     notActiveStep2();
+    instructorApp.classList.add('step3');
     point3.classList.add('active');
     step3.classList.add('active');
     step3.classList.remove('d-none');
@@ -72,16 +76,19 @@ function notActiveStep1(){
     point1.classList.remove('active');
     step1.classList.remove('active');
     step1.classList.add('d-none');
+    instructorApp.classList.remove('step1');
 }
 function notActiveStep2(){
     point2.classList.remove('active');
     step2.classList.remove('active');
     step2.classList.add('d-none');
+    instructorApp.classList.remove('step2');
 }
 function notActiveStep3(){
     point3.classList.remove('active');
     step3.classList.remove('active');
     step3.classList.add('d-none');
+    instructorApp.classList.remove('step3');
 }
 
 

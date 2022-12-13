@@ -1,8 +1,14 @@
+$xs: 375px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+@mixin xs {
+  @media (min-width:$xs) {
+    @content
+  }
+};
 @mixin sm {
   @media (min-width:$sm) {
     @content

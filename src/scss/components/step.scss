@@ -1,17 +1,18 @@
 @import "var";
-
-.step{
-  &-1{
+.wrap{
+  &-step1{
     margin-bottom: 30px;
-    &.active{
-
-
+    @include lg{
+      margin-bottom: 24px;
+      .whoflex-button__next{
+        margin-bottom: 64px;
+      }
     }
   }
-  &-2{
+  &-step2{
     margin-bottom: 30px;
   }
-  &-3{
+  &-step3{
     margin-bottom: 30px;
     font-size: 15px;
     @include lg{
@@ -51,7 +52,36 @@
       }
     }
   }
-
+}
+.step{
+  line-height: 21px;
+  &1{
+    .instructor-app__wrapper{
+      padding-bottom: 55px;
+      @include lg{
+        padding-bottom: 68px;
+      }
+    }
+    .instructor-app__buttons{
+      @include lg{
+        margin-bottom: 65px;
+      }
+    }
+  }
+  &2{
+    .instructor-app__buttons{
+      @include lg{
+        margin-bottom: 45px;
+      }
+    }
+  }
+  &3{
+    .instructor-app__buttons{
+      @include lg{
+        margin-bottom: 50px;
+      }
+    }
+  }
   &__wrapper{
     display: flex;
     gap: 6px;

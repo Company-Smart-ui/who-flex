@@ -9,7 +9,7 @@
   min-height: 100vh;
   input {
     font-size: 16px;
-    @include lg{
+    @include sm{
       font-size: 18px;
     }
 
@@ -19,8 +19,8 @@
   }
 
   &__wrapper {
-    padding: 35px 16px 40px;
-    max-width: 700px;
+    padding: 35px 16px 65px;
+    max-width: 488px;
     width: 100%;
     background: #FFFFFF;
     box-shadow: 0 0 18px 9px rgba(0, 0, 0, 0.06);
@@ -28,17 +28,20 @@
     margin: 50px 16px 70px;
     box-sizing: border-box;
     @include sm{
-      padding: 35px 52.5px 40px;
+      padding: 30px 36px 65px;
+    }
+    @include lg{
+      max-width: 700px;
     }
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 29px;
+    line-height: 35px;
     font-weight: 400;
     margin: 0 0 40px;
     color: #333333;
     @include lg {
-      font-size: 29px;
       margin-bottom: 55px;
     }
   }
@@ -46,17 +49,26 @@
     font-size: 18px;
     font-weight: 400;
     color: #333333;
-    margin: 0 0 9px;
+    margin: 0 0 35px;
     position: relative;
+    @include xs{
+      margin: 0 0 9px;
+    }
     @include lg{
       font-size: 20px;
     }
     &::before{
       position: absolute;
       content: "Required fields *";
-      right: 0;
+      left: 0;
+      bottom: -25px;
       color: #666666;
       font-size: 12px;
+      @include xs{
+        right: 0;
+        left: auto;
+        bottom: auto;
+      }
       @include lg{
         font-size: 15px;
       }
@@ -85,7 +97,7 @@
   }
   &__wrap-input{
     margin-bottom: 11px;
-    @include lg{
+    @include sm{
       margin-bottom: 18px;
     }
     &:last-child{
@@ -100,7 +112,7 @@
   }
   .whoflex-input{
     padding: 14px 16px;
-    @include lg{
+    @include sm{
       padding: 21px 16px;
     }
   }
