@@ -6,7 +6,8 @@
   margin-bottom: 40px;
   position: relative;
   @include lg{
-    margin-bottom: 26px;
+    margin: 0 auto 26px;
+    max-width: 570px;
   }
   &__container {
     position: absolute;
@@ -50,6 +51,9 @@
     font-size: 18px;
     font-weight: 400;
     position: relative;
+    @include lg{
+      padding: 17.5px 0;
+    }
     svg{
       margin-right: 10px;
     }

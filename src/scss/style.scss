@@ -630,8 +630,8 @@ select:-webkit-autofill:focus {
 .whoflex-checkbox+label::before {
 	content: '';
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 	flex-shrink: 0;
 	flex-grow: 0;
 	border: 1px solid #999999;
@@ -657,6 +657,8 @@ select:-webkit-autofill:focus {
 	width: 100%;
 	min-height: 120px;
 	padding: 8px 15px 23px;
+	font-family: 'Arial';
+	font-size: 14px;
 	@include lg{
 		min-height: 150px;
 	}
