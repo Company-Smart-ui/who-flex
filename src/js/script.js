@@ -10,21 +10,40 @@ const signUpInputs = document.getElementById("signUpInputs");
 const signUpSocialButtons = document.getElementById("signUpSocialButtons");
 const signUpBackButton = document.getElementById("signUpBackButton");
 const errorMessage = document.getElementById("error-message");
-errorMessage.style.display = "none";
 const email = document.getElementById('email');
+const signinEmail = document.getElementById('signinEmail');
+const signupEmail = document.getElementById('signupEmail');
+const signinErrorMessage = document.getElementById('signin-error-message');
+const signupErrorMessage = document.getElementById('signup-error-message');
 const haveAccount = document.getElementById('have-account');
-haveAccount.innerHTML = 'Already have an account?'
 const signupRightContainer = document.getElementById('signup-right-container')
-signupRightContainer.classList.add("mt-36")
 const whoflexAggrement = document.getElementById('whoflex-aggrement')
-whoflexAggrement.classList.add("mb-0", "mt-45")
 const signupImg = document.getElementById('signupImg')
 const signupModalContainer = document.getElementById('signupModalContainer')
-const whoflexLeftTextContainer = document.getElementById('whoflexLeftTextContainer')
+const whoflexLeftTextContainer = document.getElementById('whoflexLeftTextContainer');
 
+(function(){
+    if(signinErrorMessage){
+        signinErrorMessage.style.display = "none";
+    }
+    if(signupErrorMessage){
+        signupErrorMessage.style.display = "none";
+    }
+    if(errorMessage){
+        errorMessage.style.display = "none";
+    }
+    if(haveAccount){
+        haveAccount.innerHTML = 'Already have an account?'
+    }
+    if(signupRightContainer){
+        signupRightContainer.classList.add("mt-36")
+    }
+    if(whoflexAggrement){
+        whoflexAggrement.classList.add("mb-0", "mt-45")
+    }
+}());
 
 function windowOnClick(event) {
-    console.log('event', event.target);
     if (event.target === signInModal) {
         toggleSignInModal();
     } else if (event.target === signUpModal) {
@@ -85,7 +104,32 @@ window.addEventListener("click", windowOnClick);
 signUpButton.addEventListener('click', (e) => hideEmailSignUpEmail(e))
 signUpBackButton.addEventListener('click', (e) => showEmailSignUpEmail(e))
 
+const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
+function checkSignUpEmailValidation() {
+    if (!filter.test(signupEmail.value)) {
+        signupErrorMessage.style.display = "block";
+        signupEmail.style.border = "1px solid #ea4335";
+
+        signupEmail.focus;
+        return false;
+    } else {
+        signupErrorMessage.style.display = "none";
+        signupEmail.style.border = "1px solid #dddddd";
+    }
+};
+function checkSignInEmailValidation() {
+    if (!filter.test(signinEmail.value)) {
+        signinErrorMessage.style.display = "block";
+        signinEmail.style.border = "1px solid #ea4335";
+
+        signinEmail.focus;
+        return false;
+    } else {
+        signinErrorMessage.style.display = "none";
+        signinEmail.style.border = "1px solid #dddddd";
+    }
+};
 function checkEmailValidation() {
     const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!filter.test(email.value)) {
@@ -100,4 +144,56 @@ function checkEmailValidation() {
     }
 };
 
+
+
+function checkPassValidation() {
+    const password = document.getElementById("password");
+    const passHelpText = document.getElementById("passHelpText");
+    if (password.value.length < 6) {
+        passHelpText.style.color = "#ea4335";
+        password.style.border = "1px solid #ea4335";
+
+        password.focus;
+        return false;
+    } else {
+        passHelpText.style.color = "#999999";
+        password.style.border = "1px solid #dddddd";
+    }
+};
+
+// const email = document.querySelectorAll(".email");
+
+// function checkEmailValidation(event) {
+//     const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//
+//         let target = event.target;
+//         console.log(target)
+//
+//         // const email = document.querySelectorAll(".email");
+//         // email.forEach(function(item){
+//         if (target === document.querySelector('.email')) {
+//             console.log('kek')
+//             if (!filter.test(target.value)) {
+//                 target.classList.add('error');
+//                 target.focus;
+//                 return false;
+//             } else {
+//                 target.classList.remove('error');
+//                 // signinErrorMessage.style.display = "none";
+//                 // signinEmail.style.border = "1px solid #dddddd";
+//             }
+//         }
+//
+//         // })
+//         // if (!filter.test(email.value)) {
+//         //     // signinErrorMessage.style.display = "block";
+//         //     email.style.border = "1px solid #ea4335";
+//         //
+//         //     email.focus;
+//         //     return false;
+//         // } else {
+//         //     signinErrorMessage.style.display = "none";
+//         //     signinEmail.style.border = "1px solid #dddddd";
+//         // }
+// };
 

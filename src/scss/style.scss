@@ -1,3 +1,4 @@
+@import "components/var";
 @font-face {
 	font-family: 'Arial', sans-serif;
 	src: url(../fonts/Arialn.ttf);
@@ -22,6 +23,7 @@
 	font-weight: 600;
 }
 
+$--sm: 482px;
 
 body {
 	padding: 0;
@@ -191,7 +193,7 @@ button {
 	font-size: 14px;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: $--sm) {
 	.whoflex-logo {
 		max-width: 130px;
 		margin-bottom: 8px;
@@ -203,7 +205,7 @@ button {
 		max-width: 100px;
 	}
 }
-@media only screen and (max-width: 575px){
+@media only screen and (max-width: $--sm){
 	.whoflex-modal-hero{
 		display: none;
 	}
@@ -253,12 +255,11 @@ button {
 .whoflex-modal-title-sing-up{
 	margin-bottom: 32px;
 }
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: $--sm) {
 	.whoflex-modal-title{
 		display: none;
 	}
 }
-
 
 .whoflex-signin-modal,
 .whoflex-signup-modal {
@@ -274,18 +275,19 @@ button {
 	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 	overflow-y: auto;
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: $--sm) {
 	.whoflex-signin-modal-content, .whoflex-signup-modal-content {
 		padding: 125px 16px 30px;
 		width: 100%;
 		height: auto;
+		min-height: 100%;
 	}
 }
 .whoflex-modal-content, .whoflex-signup-modal-content {
 	box-sizing: border-box;
 	background-color: white;
 }
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: $--sm) {
 	.whoflex-modal-content, .whoflex-signup-modal-content {
 		position: absolute;
 		top: 50%;
@@ -317,7 +319,21 @@ button {
 	transition: 0.3s ease-in-out;
 	padding: 5px;
 }
-
+.whoflex-signup-wrap-input{
+	@include md{
+		display: flex;
+		margin-bottom: 16px;
+		gap: 12px;
+	}
+	.col{
+		width: 100%;
+		margin-bottom: 16px;
+		@include md{
+			margin-bottom: 0;
+			width: 50%;
+		}
+	}
+}
 .whoflex-signup-close-button {
 	width: 30px;
 	cursor: pointer;
@@ -334,7 +350,7 @@ button {
 .whoflex-signup-close-button:hover {
 	background-color: #eee;
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: $--sm) {
 	.whoflex-signin-show-modal,
 	.whoflex-signup-show-modal{
 		z-index: 100;
@@ -350,6 +366,24 @@ button {
 
 
 /* ######### Input CSS ######### */
+
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: #000 !important;
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+
 .whoflex-label {
 	font-family: 'Arial';
 	font-weight: 500;
@@ -433,15 +467,15 @@ button {
 	display: inline-block;
 }
 
-.login-bottom-whoflex-link .whoflex-link {
-	font-size: 16px;
+.login-bottom-whoflex-link{
+	font-size: 14px;
 }
 
 .whoflex-link {
 	font-family: 'Arial';
 	font-weight: 700;
 	font-size: 14px;
-	color: #e0c363;
+	color: #E0C463;
 	text-decoration-line: none;
 	transition: 0.3s ease-in-out;
 }
@@ -486,7 +520,7 @@ button {
 
 @media screen and (max-width: 767px) {
 	.whoflex-signup-modal-content {
-		width: 70%;
+		width: 482px;
 	}
 }
 
@@ -519,7 +553,7 @@ button {
 	font-size: 18px;
 	line-height: 23px;
 	color: #FFFFFF;
-	width: 80%;
+	width: 90%;
 }
 
 .signup-modal-right-container {
@@ -528,12 +562,12 @@ button {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: $--sm) {
 	.signup-modal-right-container .mt-36{
 		margin: 0;
 	}
 }
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: $--sm) {
 	.signup-modal-right-container{
 		padding: 48px 54px 48px 42px;
 	}
@@ -574,7 +608,7 @@ button {
 .whoflex-aggrement {
 	font-family: 'Arial';
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 14px;
 	color: #999999;
 }
 
@@ -635,3 +669,11 @@ button {
 	}
 }
 @import "components/accordion";
+
+
+.error-message{
+	display: none;
+}
+.email.error{
+	border: 1px solid #ea4335;
+}

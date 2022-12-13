@@ -30,13 +30,13 @@
 				<div>
 					<form>
 						<div class="mb-16">
-							<label class="whoflex-label" for="email">Email</label>
-							<input class="whoflex-input" type="email" id="email" onchange="checkEmailValidation()"/>
-							<span class="mt-8 text-red helper-text" id="error-message">Please enter a valid email</span>
+							<label class="whoflex-label" for="signinEmail">Email</label>
+							<input class="whoflex-input" type="email" id="signinEmail" onchange="checkSignInEmailValidation()"/>
+							<span class="mt-8 text-red helper-text error-message" id="signin-error-message">Please enter a valid email</span>
 						</div>
 						<div class="mb-16">
 							<label class="whoflex-label" for="password">Password</label>
-							<input class="whoflex-input" type="password" id="password" />
+							<input class="whoflex-input" type="password" id="signInPassword" />
 						</div>
 
 						<button class="whoflex-button mb-6" type="submit">
@@ -133,28 +133,28 @@
 									<span>Back</span>
 								</button>
 
-								<div class="d-flex mb-16">
-									<div class="mr-12">
+								<div class="whoflex-signup-wrap-input">
+									<div class="col">
 										<label class="whoflex-label" for="forstName">First name</label>
 										<input class="whoflex-input" type="text" id="forstName" />
 									</div>
-									<div>
+									<div class="col">
 										<label class="whoflex-label" for="lastName">Last name</label>
 										<input class="whoflex-input" type="text" id="lastName" />
 									</div>
 								</div>
 
 								<div class="mb-16">
-									<label class="whoflex-label" for="email">Email</label>
-									<input class="whoflex-input" type="email" id="email" />
+									<label class="whoflex-label" for="signupEmail">Email</label>
+									<input class="whoflex-input" type="email" id="signupEmail" onchange="checkSignUpEmailValidation()"/>
+									<span class="mt-8 text-red helper-text error-message" id="signup-error-message">Please enter a valid email</span>
 								</div>
 
 								<div class="mb-26">
 									<label class="whoflex-label" for="password">Password</label>
-									<input class="whoflex-input" type="password" id="password" />
+									<input class="whoflex-input" type="password" id="password" onchange="checkPassValidation()" />
 
-									<span class="mt-8 d-block text-gray helper-text" id="error-message">Password must be at least 6
-										characters.</span>
+									<span class="mt-8 d-block text-gray helper-text" id="passHelpText">Password must be at least 6 characters.</span>
 								</div>
 
 								<button class="whoflex-button mb-16" type="submit">
@@ -213,7 +213,7 @@
 						</div>
 					</div>
 
-					<div>
+					<div class="login-bottom-whoflex-link">
 						<span id="have-account"></span>
 						<a href="#" class="whoflex-link"> Sign in</a>
 					</div>

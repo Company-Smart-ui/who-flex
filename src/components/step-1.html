@@ -13,9 +13,10 @@
             <span class="mt-8 d-block text-gray helper-text">Your email address will be used for your Whoflex Instructor Account login once your application is accepted.</span>
         </div>
         <div class="instructor-app__wrap-input">
-            <input class="whoflex-input" type="password" id="password" placeholder="Password*" required/>
-
-            <span class="mt-8 d-block text-gray helper-text">Your password must be at least 6 characters. The password will be used for your Whoflex Instructor Account login once your application is accepted.</span>
+            <input class="whoflex-input" type="password" id="password" placeholder="Password*" onchange="checkPassValidation()" required/>
+            <span class="mt-8 d-block text-gray helper-text">
+                <span id="passHelpText">Your password must be at least 6 characters.</span>
+                The password will be used for your Whoflex Instructor Account login once your application is accepted.</span>
         </div>
         <div class="instructor-app__wrap-input">
             <input class="whoflex-input" type="text" placeholder="Linkedin profile URL"/>
