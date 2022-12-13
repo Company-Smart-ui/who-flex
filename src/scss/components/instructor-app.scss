@@ -92,6 +92,12 @@
       margin-bottom: 0;
     }
   }
+  .whoflex-textarea{
+    border-radius: 6px;
+    @include lg{
+      border-radius: 10px;
+    }
+  }
   .whoflex-input{
     padding: 14px 16px;
     @include lg{
@@ -100,5 +106,57 @@
   }
   .helper-text{
     color: #666666;
+  }
+}
+
+
+// iput file styles //
+
+.input-file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+
+  &__button-text {
+    line-height: 1;
+    margin-top: 1px;
+    border: 2px solid transparent;
+    &:hover{
+      border-bottom: 2px solid #E0C463;
+    }
+  }
+  &__button {
+    text-align: center;
+    color: #E0C463;
+    font-size: 16px;
+    font-weight: 700;
+
+    width: 100%;
+    min-height: 62px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    cursor: pointer;
+    @include lg{
+      font-size: 17px;
+      border-radius: 10px;
+    }
+  }
+  &__svg{
+    margin-right: 18px;
   }
 }

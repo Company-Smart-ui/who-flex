@@ -662,6 +662,9 @@ select:-webkit-autofill:focus {
 	}
 	&__wrap{
 		margin-bottom: 20px;
+		p{
+			margin: 0 0 5px;
+		}
 
 		label{
 			display: block;

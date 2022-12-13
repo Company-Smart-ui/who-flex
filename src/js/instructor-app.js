@@ -39,11 +39,10 @@ function activeStep2(){
     btnPrev.classList.remove('d-none');
     btnPrev.addEventListener('click', function(){
         activeStep1();
-    })
+    });
+    btnNext.innerHTML = 'Next';
+    btnNext.setAttribute('type', 'button');
     btnNext.addEventListener('click', function(){
-        // if((firstName.value.length > 1) && (lastName.value.length > 1)){
-        //     activeStep2();
-        // }
         activeStep3();
     })
 }
@@ -58,6 +57,7 @@ function activeStep3(){
     btnPrev.addEventListener('click', function(){
         activeStep2();
     })
+    btnNext.innerHTML = 'Submit';
     btnNext.addEventListener('click', function(){
         btnNext.setAttribute('type', 'submit');
     })
@@ -78,6 +78,29 @@ function notActiveStep3(){
     step3.classList.add('d-none');
 }
 
+
+
+
+(function (){
+    let inputs = document.querySelectorAll('.input-file');
+    Array.prototype.forEach.call(inputs, function (input) {
+        let label = input.nextElementSibling,
+            labelVal = label.querySelector('.input-file__button-text').innerText;
+
+        input.addEventListener('change', function (e) {
+            // let countFiles = '';
+            // if (this.files && this.files.length >= 1)
+            //     countFiles = this.files.length;
+
+            // if (countFiles)
+            if (label)
+                label.querySelector('.input-file__button-text').innerText = input.files[0].name;
+            else
+                label.querySelector('.input-file__button-text').innerText = labelVal;
+        });
+    });
+}());
+
 function instApp (){
     if(step1 && step2 && step3){
         if(step1.classList.contains('active')){
@@ -94,6 +117,10 @@ function instApp (){
             activeStep3();
             notActiveStep1();
             notActiveStep2();
+        }
+        else {
+            step1.classList.add('active');
+            activeStep1();
         }
     }
 };

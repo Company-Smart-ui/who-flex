@@ -156,44 +156,9 @@ function checkPassValidation() {
         password.focus;
         return false;
     } else {
-        passHelpText.style.color = "#999999";
+        passHelpText.style.color = "#666666";
         password.style.border = "1px solid #dddddd";
     }
 };
 
-// const email = document.querySelectorAll(".email");
-
-// function checkEmailValidation(event) {
-//     const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-//
-//         let target = event.target;
-//         console.log(target)
-//
-//         // const email = document.querySelectorAll(".email");
-//         // email.forEach(function(item){
-//         if (target === document.querySelector('.email')) {
-//             console.log('kek')
-//             if (!filter.test(target.value)) {
-//                 target.classList.add('error');
-//                 target.focus;
-//                 return false;
-//             } else {
-//                 target.classList.remove('error');
-//                 // signinErrorMessage.style.display = "none";
-//                 // signinEmail.style.border = "1px solid #dddddd";
-//             }
-//         }
-//
-//         // })
-//         // if (!filter.test(email.value)) {
-//         //     // signinErrorMessage.style.display = "block";
-//         //     email.style.border = "1px solid #ea4335";
-//         //
-//         //     email.focus;
-//         //     return false;
-//         // } else {
-//         //     signinErrorMessage.style.display = "none";
-//         //     signinEmail.style.border = "1px solid #dddddd";
-//         // }
-// };
 
