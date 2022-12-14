@@ -19,7 +19,7 @@
   }
 
   &__wrapper {
-    padding: 35px 16px 65px;
+    padding: 35px 16px 55px;
     max-width: 488px;
     width: 100%;
     background: #FFFFFF;
@@ -40,11 +40,8 @@
     font-size: 29px;
     line-height: 35px;
     font-weight: 400;
-    margin: 0 0 42px;
+    margin: 0 0 35px;
     color: #333333;
-    @include sm{
-      margin-bottom: 35px;
-    }
     @include lg {
       margin-bottom: 55px;
     }
@@ -58,7 +55,7 @@
     @include xs{
       margin: 0 0 9px;
     }
-    @include lg{
+    @include sm{
       font-size: 20px;
       margin-bottom: 17px;
     }
@@ -91,6 +88,12 @@
     display: flex;
     gap: 10px;
     margin-bottom: 35px;
+    @include sm{
+      margin-bottom: 45px;
+    }
+    @include lg{
+      margin-bottom: 65px;
+    }
     .whoflex-button{
       width: 50%;
       display: inline-block;
@@ -111,6 +114,7 @@
   }
   .whoflex-textarea{
     border-radius: 6px;
+    line-height: 21px;
     @include lg{
       border-radius: 10px;
     }
