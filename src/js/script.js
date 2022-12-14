@@ -62,7 +62,7 @@ function toggleSignUpModal() {
 function hideEmailSignUpEmail(e) {
     e.preventDefault()
     signupImg.src = "images/sign-up2.png"
-    haveAccount.innerHTML = 'Don\'t have an account?'
+    // haveAccount.innerHTML = 'Don\'t have an account?'
     signUpInputs.classList.add("d-block")
     signUpInputs.classList.remove("d-none")
     signUpButton.classList.add("d-none")

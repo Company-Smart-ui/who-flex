@@ -126,6 +126,9 @@ button {
 .mb-26 {
 	margin-bottom: 26px;
 }
+.mb-35 {
+	margin-bottom: 35px;
+}
 
 .mt-0 {
 	margin-top: 0;
@@ -225,8 +228,7 @@ button {
 	font-weight: 400;
 	font-size: 18px;
 	color: #a29f9f;
-	margin-top: 20px;
-	margin-bottom: 30px;
+	margin: 30px 0;
 }
 
 .whoflex-or::after,
@@ -433,7 +435,7 @@ select:-webkit-autofill:focus {
 }
 
 .whoflex-button:hover {
-	background-color: #343434;
+	background-color: #343434 !important;
 }
 
 .whoflex-social-button {
@@ -479,6 +481,11 @@ select:-webkit-autofill:focus {
 	text-decoration-line: none;
 	transition: 0.3s ease-in-out;
 }
+@media only screen and (max-width: 575px) {
+	.whoflex-link {
+		text-decoration-line: underline;
+	}
+}
 
 .whoflex-link:hover {
 	text-decoration-line: underline;
@@ -499,7 +506,6 @@ select:-webkit-autofill:focus {
 .signup-modal-left-container {
 	width: 49%;
 	position: relative;
-	overflow: auto;
 }
 
 @media only screen and (max-width: 991px) {
@@ -515,7 +521,8 @@ select:-webkit-autofill:focus {
 
 @media screen and (max-width: 991px) {
 	.whoflex-signup-modal-content {
-		width: 60%;
+		width: 100%;
+		max-width: 490px;
 	}
 }
 
@@ -611,6 +618,11 @@ select:-webkit-autofill:focus {
 	font-weight: 400;
 	font-size: 14px;
 	color: #999999;
+}
+@media only screen and (max-width: $--sm) {
+	.whoflex-aggrement{
+		margin-top: 25px !important;
+	}
 }
 
 /* ######### Instructor Application CSS ######### */

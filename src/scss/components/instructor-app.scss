@@ -190,9 +190,9 @@
   &__button-text {
     line-height: 1;
     margin-top: 1px;
-    border: 2px solid transparent;
+    border-bottom: 2px solid #E0C463;
     &:hover{
-      border-bottom: 2px solid #E0C463;
+      border-bottom: 2px solid transparent;
     }
   }
   &__button {
