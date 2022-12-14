@@ -92,24 +92,26 @@ function notActiveStep3(){
 }
 
 
-
-
 (function (){
     const inputs = document.querySelectorAll('.input-file');
     const paperClip = document.querySelector('.paperClip');
     const iconPdf = document.querySelector('.iconPdf');
     const buttonText = document.querySelector('.input-file__button-text');
+    const dropArea = document.querySelector('.input-file__button');
     const inputFile = document.querySelector('.input-file__wrapper');
     const uploadBottom = document.querySelector('.upload-bottom');
     const tryAgain = document.querySelector('.tryAgain');
+
+
+
     Array.prototype.forEach.call(inputs, function (input) {
         const label = input.nextElementSibling,
             labelVal = label.querySelector('.input-file__button-text').innerText;
 
-        input.addEventListener('change', function (e) {
+        function uploadFile(){
             if (label) {
                 inputFile.classList.add('upload');
-                buttonText.innerText = input.files[0].name;
+
                 paperClip.classList.add('d-none');
                 iconPdf.classList.remove('d-none');
                 uploadBottom.classList.remove('d-none');
@@ -119,7 +121,20 @@ function notActiveStep3(){
             }
             else
                 label.querySelector('.input-file__button-text').innerText = labelVal;
+        };
+
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        })
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadFile();
+            buttonText.innerText = e.dataTransfer.files[0].name;
+        })
+        input.addEventListener('change', function (e) {
+            buttonText.innerText = input.files[0].name;
         });
+        input.addEventListener('change', uploadFile);
     });
 }());
 
