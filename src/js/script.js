@@ -115,7 +115,7 @@ function checkSignUpEmailValidation() {
         signupErrorMessage.style.display = "block";
         signupEmail.style.border = "1px solid #ea4335";
 
-        signupEmail.focus;
+        signupEmail.focus();
         return false;
     } else {
         signupErrorMessage.style.display = "none";
@@ -127,7 +127,7 @@ function checkSignInEmailValidation() {
         signinErrorMessage.style.display = "block";
         signinEmail.style.border = "1px solid #ea4335";
 
-        signinEmail.focus;
+        signinEmail.focus();
         return false;
     } else {
         signinErrorMessage.style.display = "none";
@@ -140,7 +140,7 @@ function checkEmailValidation() {
         errorMessage.style.display = "block";
         email.style.border = "1px solid #ea4335";
 
-        email.focus;
+        email.focus();
         return false;
     } else {
         errorMessage.style.display = "none";
@@ -157,7 +157,7 @@ function checkPassValidation() {
         passHelpText.style.color = "#ea4335";
         password.style.border = "1px solid #ea4335";
 
-        password.focus;
+        password.focus();
         return false;
     } else {
         passHelpText.style.color = "#666666";

@@ -17,16 +17,45 @@ const btnNext = document.querySelector(".whoflex-button__next");
 function handleClick() {
     const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (filter.test(instructorAppEmail.value)
-        && firstName.value.length > 1
-        && lastName.value.length > 1
+        && firstName.value.length > 0
+        && lastName.value.length > 0
         && password.value.length >= 6) {
         activeStep2();
     }
+    if (password.value === "") {
+        password.style.border = "1px solid #ea4335";
+        password.addEventListener('keyup', function () {
+            if(password.value.length > 6)
+                password.style.border = "1px solid #ddd";
+        })
+        password.focus();
+    }
+    if(!filter.test(instructorAppEmail.value) || (instructorAppEmail.value === "")) {
+        instructorAppEmail.style.border = "1px solid #ea4335";
+        instructorAppEmail.focus();
+    }
+    if(lastName.value === "") {
+        lastName.style.border = "1px solid #ea4335";
+        lastName.addEventListener('keyup', function () {
+            if(lastName.value.length > 0)
+                lastName.style.border = "1px solid #ddd";
+        })
+        lastName.focus();
+    }
+    if(firstName.value === "") {
+        firstName.style.border = "1px solid #ea4335";
+        firstName.focus();
+        firstName.addEventListener('keyup', function () {
+            if(firstName.value.length > 0)
+                firstName.style.border = "1px solid #ddd";
+        })
+
+    }
 };
 function btnNextStep3(){
-    if(agreement.checked){
+    // if(agreement.checked){
         btnNext.setAttribute('type', 'submit');
-    }
+    // }
 }
 function activeStep1(){
     btnNext.removeEventListener('click', activeStep2);
