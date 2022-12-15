@@ -23,7 +23,7 @@
 	font-weight: 600;
 }
 
-$--sm: 482px;
+$--sm: 576px;
 
 body {
 	padding: 0;
@@ -195,11 +195,13 @@ button {
 	font-weight: 400;
 	font-size: 14px;
 }
-
-@media only screen and (max-width: $--sm) {
+.whoflex-logo {
+	max-width: 130px;
+	margin-bottom: 8px;
+}
+@media only screen and (min-width: 991px) {
 	.whoflex-logo {
-		max-width: 130px;
-		margin-bottom: 8px;
+		max-width: 200px;
 	}
 }
 
@@ -209,10 +211,26 @@ button {
 	}
 }
 @media only screen and (max-width: $--sm){
-	.whoflex-modal-hero{
+	.whoflex-moto {
 		display: none;
 	}
+	.whoflex-modal-hero{
+		top: 20px;
+		width: 100%;
+		left: 0;
+		position: absolute;
+		box-shadow: rgb(0 0 0 / 10%) 0px 2px 2px;
+	}
 }
+@media only screen and (min-width: $--sm){
+	.whoflex-signup-modal{
+		.whoflex-modal-hero {
+			display: none;
+		}
+	}
+}
+
+
 .whoflex-moto {
 	font-family: 'Arial';
 	font-weight: 400;
@@ -279,7 +297,7 @@ button {
 }
 @media only screen and (max-width: $--sm) {
 	.whoflex-signin-modal-content, .whoflex-signup-modal-content {
-		padding: 125px 16px 30px;
+		padding: 100px 16px 30px;
 		width: 100%;
 		height: auto;
 		min-height: 100%;
@@ -288,6 +306,12 @@ button {
 .whoflex-modal-content, .whoflex-signup-modal-content {
 	box-sizing: border-box;
 	background-color: white;
+}
+@media only screen and (min-width: $--sm) and (max-height: 800px) {
+	.whoflex-modal-content, .whoflex-signup-modal-content {
+		height: 500px;
+		overflow: auto;
+	}
 }
 @media only screen and (min-width: $--sm) {
 	.whoflex-modal-content, .whoflex-signup-modal-content {
@@ -315,11 +339,15 @@ button {
 	cursor: pointer;
 	position: absolute;
 	right: 10px;
-	top: 8px;
+	top: 15px;
 	border: 2px solid transparent;
 	border-radius: 30px;
 	transition: 0.3s ease-in-out;
 	padding: 5px;
+	z-index: 1;
+	@include sm{
+		top: 8px;
+	}
 }
 .whoflex-signup-wrap-input{
 	@include md{
@@ -341,11 +369,15 @@ button {
 	cursor: pointer;
 	position: absolute;
 	right: 7px;
-	top: 8px;
+	top: 15px;
 	border: 2px solid transparent;
 	border-radius: 30px;
 	transition: 0.3s ease-in-out;
 	padding: 5px;
+	z-index: 1;
+	@include sm{
+		top: 8px;
+	}
 }
 
 .whoflex-signin-close-button:hover,
@@ -494,10 +526,21 @@ select:-webkit-autofill:focus {
 /* ######### Sign Up CSS ######### */
 .signup-modal-container {
 	display: flex;
-	height: 640px;
+	//min-height: 640px;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: $--sm) {
+	.signup-modal-container, .whoflex-signin-wrap-modal {
+		max-width: 380px;
+		margin: 0 auto;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.signup-modal-container {
+		max-height: 640px;
+	}
+}
+@media only screen and (max-width: 1200px) {
 	.signup-modal-container {
 		display: block;
 	}
@@ -508,7 +551,7 @@ select:-webkit-autofill:focus {
 	position: relative;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1200px) {
 	.signup-modal-left-container {
 		display: none;
 	}
@@ -519,16 +562,10 @@ select:-webkit-autofill:focus {
 	padding: 0;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: $--sm) and (max-width: 1200px) {
 	.whoflex-signup-modal-content {
 		width: 100%;
 		max-width: 490px;
-	}
-}
-
-@media screen and (max-width: 767px) {
-	.whoflex-signup-modal-content {
-		width: 482px;
 	}
 }
 
@@ -567,8 +604,6 @@ select:-webkit-autofill:focus {
 .signup-modal-right-container {
 	background-color: #fff;
 	width: 51%;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
 }
 @media only screen and (max-width: $--sm) {
 	.signup-modal-right-container .mt-36{
@@ -578,9 +613,17 @@ select:-webkit-autofill:focus {
 @media only screen and (min-width: $--sm) {
 	.signup-modal-right-container{
 		padding: 48px 54px 48px 42px;
+		border-radius: 10px;
 	}
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (min-width: 1200px) {
+	.signup-modal-right-container {
+		width: auto;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+@media only screen and (max-width: 1200px) {
 	.signup-modal-right-container {
 		width: auto;
 	}
