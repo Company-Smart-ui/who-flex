@@ -106,6 +106,13 @@
       &:last-child{
         margin-bottom: 0;
       }
+      label{
+        transition: .4s;
+        &:hover{
+          cursor: pointer;
+          color: #E0C463;
+        }
+      }
     }
   }
 }

@@ -4,9 +4,11 @@
 .instructor-app {
   background-color: #F8F8F8;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 5vh;
   min-height: 100vh;
+  overflow: hidden;
   input {
     font-size: 16px;
     @include sm{
@@ -17,29 +19,36 @@
       color: #999999;
     }
   }
-
+  &__hero{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
   &__wrapper {
+    height: calc(90vh - 100px);
+    overflow: auto;
     padding: 35px 16px 55px;
     max-width: 488px;
-    width: 100%;
     background: #FFFFFF;
     box-shadow: 0 0 18px 9px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
-    margin: 50px 16px 70px;
+    margin: 0 16px;
     box-sizing: border-box;
     @include sm{
       padding: 30px 36px 65px;
     }
     @include lg{
       padding: 30px 56px 65px;
-      max-width: 700px;
+      min-width: 700px;
     }
   }
 
   &__title {
     font-size: 27px;
     line-height: 35px;
-    font-weight: 400;
+    font-weight: bold;
     margin: 0 0 35px;
     color: #333333;
     @include sm{
@@ -127,6 +136,9 @@
     @include sm{
       padding: 21px 16px;
     }
+    &:focus-visible, &:focus{
+      border-width: 2px;
+    }
   }
   .helper-text{
     color: #666666;
@@ -195,9 +207,9 @@
   &__button-text {
     line-height: 1;
     margin-top: 1px;
-    border-bottom: 2px solid #E0C463;
+    border-bottom: 2px solid transparent;
     &:hover{
-      border-bottom: 2px solid transparent;
+      border-bottom: 2px solid #E0C463;
     }
   }
   &__button {

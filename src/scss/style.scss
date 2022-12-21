@@ -468,8 +468,10 @@ select:-webkit-autofill:focus {
 	cursor: pointer;
 }
 
-.whoflex-button:hover {
-	background-color: #343434 !important;
+@media only screen and (min-width: 991px){
+	.whoflex-button:hover {
+		background-color: #343434 !important;
+	}
 }
 
 .whoflex-social-button {
