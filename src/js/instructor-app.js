@@ -130,13 +130,21 @@ function notActiveStep3(){
     const inputFile = document.querySelector('.input-file__wrapper');
     const uploadBottom = document.querySelector('.upload-bottom');
     const tryAgain = document.querySelector('.tryAgain');
+    const commentDelete = document.querySelector('.comment_delete');
 
 
 
     Array.prototype.forEach.call(inputs, function (input) {
         const label = input.nextElementSibling,
             labelVal = label.querySelector('.input-file__button-text').innerText;
+        commentDelete.addEventListener('click', function (){
+            label.querySelector('.input-file__button-text').innerText = labelVal;
+            inputFile.classList.remove('upload');
 
+            paperClip.classList.remove('d-none');
+            iconPdf.classList.add('d-none');
+            uploadBottom.classList.add('d-none');
+        });
         function uploadFile(){
             if (label) {
                 inputFile.classList.add('upload');
@@ -151,6 +159,7 @@ function notActiveStep3(){
             else
                 label.querySelector('.input-file__button-text').innerText = labelVal;
         };
+
 
         dropArea.addEventListener('dragover', (e) => {
             e.preventDefault();

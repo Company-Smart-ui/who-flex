@@ -112,6 +112,9 @@
       font-size: 18px;
       &__prev{
         background-color: #000;
+        &:hover{
+          background-color: grey;
+        }
       }
     }
   }
@@ -137,7 +140,7 @@
       padding: 21px 16px;
     }
     &:focus-visible, &:focus{
-      border-width: 2px;
+      border: 2px solid #E0C463 !important;
     }
   }
   .helper-text{
@@ -184,13 +187,20 @@
       display: flex;
       justify-content: space-between;
     }
-    .tryAgain{
+    .tryAgain, .comment_delete{
       border: none;
       background-color: transparent;
       color: #e0c463;
       font-weight: 700;
       font-size: 14px;
       line-height: 21px;
+    }
+    .comment_delete{
+      height: 15px;
+      width: 15px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../images/icons/delete.png');
     }
     .icon-done{
       display: none;

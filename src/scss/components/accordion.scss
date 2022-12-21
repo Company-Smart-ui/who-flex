@@ -54,6 +54,7 @@
       padding: 17.5px 0;
     }
     svg{
+      width: 28px;
       margin-right: 10px;
     }
     &::after , &::before {
@@ -97,7 +98,7 @@
     margin: 0;
     list-style: none;
     color: #666666;
-    font-size: 15px;
+    font-size: 18px;
     @include lg{
       font-size: 16px;
     }

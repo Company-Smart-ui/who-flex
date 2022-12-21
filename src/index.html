@@ -34,9 +34,10 @@
 							<input class="whoflex-input" type="email" id="signinEmail" onchange="checkSignInEmailValidation()"/>
 							<span class="mt-8 text-red helper-text error-message" id="signin-error-message">Please enter a valid email</span>
 						</div>
-						<div class="mb-16">
+						<div class="whoflex-input__wrap mb-16">
 							<label class="whoflex-label" for="password">Password</label>
-							<input class="whoflex-input" type="password" id="signInPassword" />
+							<input class="whoflex-input" type="password" id="signInPassword"/>
+							<span class="showPass">Show</span>
 						</div>
 
 						<button class="whoflex-button mb-6" type="submit">
@@ -153,10 +154,10 @@
 									<span class="mt-8 text-red helper-text error-message" id="signup-error-message">Please enter a valid email</span>
 								</div>
 
-								<div class="mb-35">
+								<div class="whoflex-input__wrap mb-35">
 									<label class="whoflex-label" for="password">Password</label>
 									<input class="whoflex-input" type="password" id="password" onchange="checkPassValidation()" />
-
+									<span class="showPass">Show</span>
 									<span class="mt-8 d-block text-gray helper-text" id="passHelpText">Password must be at least 6 characters.</span>
 								</div>
 

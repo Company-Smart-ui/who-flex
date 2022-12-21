@@ -449,6 +449,20 @@ select:-webkit-autofill:focus {
 	border: 1px solid #e0c463;
 	outline: none;
 }
+.whoflex-input__wrap{
+	position: relative;
+	.showPass{
+		position: absolute;
+		content: "";
+		color: #E0C463;
+		font-weight: 400;
+		font-size: 13px;
+		top: 37px;
+		right: 15px;
+		cursor: pointer;
+		display: block;
+	}
+}
 
 /* ######### BUtton CSS ######### */
 .whoflex-button {
@@ -470,7 +484,7 @@ select:-webkit-autofill:focus {
 
 @media only screen and (min-width: 991px){
 	.whoflex-button:hover {
-		background-color: #343434 !important;
+		background-color: #343434;
 	}
 }
 
@@ -721,6 +735,10 @@ select:-webkit-autofill:focus {
 	font-size: 14px;
 	@include lg{
 		min-height: 150px;
+	}
+	&:focus-visible, &:focus{
+		border: 2px solid #E0C463 !important;
+		outline: 0!important;
 	}
 	&__wrap{
 		margin-bottom: 20px;

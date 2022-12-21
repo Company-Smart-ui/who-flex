@@ -165,4 +165,22 @@ function checkPassValidation() {
     }
 };
 
+function showPassFunction() {
+    const showPass = document.querySelectorAll(".showPass");
+    showPass.forEach(item => {
+        item.addEventListener('click', function(){
+            const wrapPa = item.closest('.whoflex-input__wrap');
+            const input = wrapPa.querySelector('input');
+            if (input.type === "password") {
+                input.type = "text";
+                item.innerHTML = "Hide";
+            } else {
+                input.type = "password";
+                item.innerHTML = "Show";
+            }
+        })
+    })
+};
+showPassFunction();
+
 
