@@ -112,8 +112,10 @@
       font-size: 18px;
       &__prev{
         background-color: #000;
-        &:hover{
-          background-color: grey;
+        @include lg{
+          &:hover{
+            background-color: grey;
+          }
         }
       }
     }
@@ -200,7 +202,7 @@
       width: 15px;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url('../../images/icons/delete.png');
+      background-image: url('./../images/icons/delete.png');
     }
     .icon-done{
       display: none;
