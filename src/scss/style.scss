@@ -477,6 +477,9 @@ select:-webkit-autofill:focus {
 	width: 100%;
 	transition: all 0.3s ease-in-out;
 	box-sizing: border-box;
+	&.password{
+		padding-right: 55px !important;
+	}
 }
 
 .whoflex-input:focus,
