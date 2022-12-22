@@ -23,28 +23,39 @@
 	font-weight: 600;
 }
 @font-face {
-	font-family: 'star', sans-serif;
-	src: url('./../fonts/passStar/passstar.eot?0000');
-	src: url('../fonts/passStar/passstar.eot?0000#iefix') format('embedded-opentype'),
-	url('../fonts/passStar/passstar.woff2?0000') format('woff2'),
-	url('../fonts/passStar/passstar.woff?0000') format('woff'),
-	url('../fonts/passStar/passstar.ttf?0000') format('truetype'),
-	url('../fonts/passStar/passstar.svg?0000#fontello') format('svg');
+	font-family: 'passstar';
+	src: url('./../fonts/passStar/passstar.eot');
+	src: url('./../fonts/passStar/passstar.eot') format('embedded-opentype'),
+	url('./../fonts/passStar/passstar.woff') format('woff'),
+	url('./../fonts/passStar/passstar.ttf') format('truetype'),
+	url('./../fonts/passStar/passstar.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 input[type="password"] {
-	font-family: 'star', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-
+	transition: none;
+	font-size: 10px !important;
+	line-height: 1rem;
+	font-family: "passstar", sans-serif;
 	font-variant: normal;
-	text-transform: none;
+	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	//letter-spacing: 2px;
+	letter-spacing: 1.5px;
+}
+.instructor-app{
+	input[type="password"] {
+		font-size: 10px !important;
+		line-height: 1.3rem;
+	}
+}
+input{
+	transition: none !important;
+}
+input::placeholder{
+	letter-spacing: normal;
+	font-size: 1rem !important;
 }
 
 $--sm: 576px;

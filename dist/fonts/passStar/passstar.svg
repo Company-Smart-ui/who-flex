@@ -6,7 +6,7 @@
 <font id="passstar" horiz-adv-x="1000" >
 <font-face font-family="passstar" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="star-filled" unicode="&#xe800;" d="M297 498q69 152 114 252 6 15 24 15t23-15l114-252q164-18 274-30 15-3 21-18t-6-27l-204-187q33-161 55-270 3-15-10-25t-27-2l-240 136q-144-81-240-136-15-9-28 2t-11 25l56 270q-122 112-204 187-12 11-6 26t21 19z" horiz-adv-x="869" />
+<glyph glyph-name="asterisk" unicode="&#x2022;" d="M827 264q26-14 33-43t-7-55l-35-61q-15-26-44-33t-54 7l-149 85v-171q0-29-21-50t-50-22h-71q-29 0-51 22t-21 50v171l-148-85q-26-15-55-7t-43 33l-36 61q-14 26-7 55t34 43l148 86-148 86q-26 14-34 43t7 55l36 61q15 26 43 33t55-7l148-85v171q0 29 21 50t51 22h71q29 0 50-22t21-50v-171l149 85q26 15 54 7t44-33l35-61q15-26 7-55t-33-43l-148-86z" horiz-adv-x="928.6" />
 </font>
 </defs>
 </svg>
