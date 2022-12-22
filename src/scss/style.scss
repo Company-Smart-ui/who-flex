@@ -37,6 +37,7 @@ input[type="password"] {
 	line-height: 1.3rem;
 	font-family: "passstar", sans-serif;
 	font-size: 17px !important;
+	letter-spacing: 0.1em;
 }
 input.fs10{
 	&[type="password"] {
@@ -335,7 +336,7 @@ button {
 	box-sizing: border-box;
 	background-color: white;
 	input[type="password"] {
-		font-size: 12px !important;
+		font-size: 10px !important;
 	}
 }
 @media only screen and (min-width: $--sm) {
