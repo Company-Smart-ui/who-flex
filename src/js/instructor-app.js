@@ -131,20 +131,38 @@ function notActiveStep3(){
     const uploadBottom = document.querySelector('.upload-bottom');
     const tryAgain = document.querySelector('.tryAgain');
     const commentDelete = document.querySelector('.comment_delete');
+    // const Store = {
+    //     files: [],
+    // }
+    // function handleChange(e) {
+    //     if (!e.target.files.length) {
+    //         return;
+    //     }
+    //     const files = Object.keys(e.target.files).map((i) => e.target.files[i]);
+    //     e.target.value = '';
+    // }
+    //
 
 
 
     Array.prototype.forEach.call(inputs, function (input) {
         const label = input.nextElementSibling,
             labelVal = label.querySelector('.input-file__button-text').innerText;
-        commentDelete.addEventListener('click', function (){
+
+
+
+        function clearInput(){
             label.querySelector('.input-file__button-text').innerText = labelVal;
             inputFile.classList.remove('upload');
 
             paperClip.classList.remove('d-none');
             iconPdf.classList.add('d-none');
             uploadBottom.classList.add('d-none');
-        });
+
+            input.value = '';
+        }
+
+        commentDelete.addEventListener('click', clearInput);
         function uploadFile(){
             if (label) {
                 inputFile.classList.add('upload');

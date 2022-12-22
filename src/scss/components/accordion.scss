@@ -20,6 +20,9 @@
       .accordion__body{
         padding: 10px 0 30px;
       }
+      .accordion__content{
+        display: block;
+      }
     }
     &:first-child{
       .accordion__title-text{
@@ -93,6 +96,7 @@
   }
 
   &__content {
+    display: none;
     width: calc(100% - 45px);
     padding: 0;
     margin: 0;

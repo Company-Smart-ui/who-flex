@@ -187,7 +187,7 @@
           border: 1px solid #276EF1;
           margin-bottom: 11px;
           &-text{
-            width: calc(100% - 40px);
+            width: calc(100% - 70px);
           }
         }
       }
@@ -230,6 +230,10 @@
     line-height: 1;
     margin-top: 1px;
     border-bottom: 2px solid transparent;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     &:hover{
       border-bottom: 2px solid #E0C463;
     }
@@ -267,5 +271,8 @@
   }
   &__svg{
     margin-right: 18px;
+    &.paperClip{
+      margin: 0;
+    }
   }
 }
