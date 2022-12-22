@@ -131,18 +131,9 @@ function notActiveStep3(){
     const uploadBottom = document.querySelector('.upload-bottom');
     const tryAgain = document.querySelector('.tryAgain');
     const commentDelete = document.querySelector('.comment_delete');
-    // const Store = {
-    //     files: [],
-    // }
-    // function handleChange(e) {
-    //     if (!e.target.files.length) {
-    //         return;
-    //     }
-    //     const files = Object.keys(e.target.files).map((i) => e.target.files[i]);
-    //     e.target.value = '';
-    // }
-    //
-
+    if(commentDelete){
+        commentDelete.classList.add('d-none');
+    }
 
 
     Array.prototype.forEach.call(inputs, function (input) {
@@ -158,7 +149,7 @@ function notActiveStep3(){
             paperClip.classList.remove('d-none');
             iconPdf.classList.add('d-none');
             uploadBottom.classList.add('d-none');
-
+            commentDelete.classList.add('d-none');
             input.value = '';
         }
 
@@ -169,6 +160,7 @@ function notActiveStep3(){
 
                 paperClip.classList.add('d-none');
                 iconPdf.classList.remove('d-none');
+                commentDelete.classList.remove('d-none');
                 uploadBottom.classList.remove('d-none');
                 tryAgain.addEventListener('click', function (){
                     input.click();

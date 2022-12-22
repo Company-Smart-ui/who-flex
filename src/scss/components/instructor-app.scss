@@ -187,7 +187,7 @@
           border: 1px solid #276EF1;
           margin-bottom: 11px;
           &-text{
-            width: calc(100% - 70px);
+            width: calc(100% - 100px);
           }
         }
       }
@@ -208,6 +208,8 @@
       line-height: 21px;
     }
     .comment_delete{
+      position: absolute;
+      right: 55px;
       height: 18px;
       width: 18px;
       background-size: contain;
@@ -271,8 +273,11 @@
   }
   &__svg{
     margin-right: 18px;
-    &.paperClip{
-      margin: 0;
-    }
+  }
+}
+.tryAgain{
+  margin-left: auto;
+  .paperClip{
+    margin: 0;
   }
 }
