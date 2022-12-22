@@ -22,6 +22,12 @@
         font-size: 18px !important;
       }
     }
+    &[type="password"] {
+      line-height: 1.2rem;
+      @include sm{
+        line-height: 1.3rem;
+      }
+    }
   }
   &__hero{
     width: 100%;
