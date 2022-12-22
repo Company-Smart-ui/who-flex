@@ -158,7 +158,6 @@ function checkPassValidation() {
         password.style.border = "1px solid #ea4335";
 
         password.focus();
-        return false;
     } else {
         passHelpText.style.color = "#666666";
         password.style.border = "1px solid #dddddd";
@@ -168,9 +167,17 @@ function checkPassValidation() {
 function showPassFunction() {
     const showPass = document.querySelectorAll(".showPass");
     showPass.forEach(item => {
+        item.classList.add('d-none');
+        const wrapPa = item.closest('.whoflex-input__wrap');
+        const input = wrapPa.querySelector('input');
+        input.addEventListener('keyup', function(){
+            if(input.value.length > 0){
+                item.classList.remove('d-none');
+            }else{
+                item.classList.add('d-none');
+            }
+        })
         item.addEventListener('click', function(){
-            const wrapPa = item.closest('.whoflex-input__wrap');
-            const input = wrapPa.querySelector('input');
             if (input.type === "password") {
                 input.type = "text";
                 item.innerHTML = "Hide";

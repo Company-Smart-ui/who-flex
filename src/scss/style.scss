@@ -22,6 +22,30 @@
 	src: url(../fonts/G_ari_bd.TTF);
 	font-weight: 600;
 }
+@font-face {
+	font-family: 'star', sans-serif;
+	src: url('./../fonts/passStar/passstar.eot?0000');
+	src: url('../fonts/passStar/passstar.eot?0000#iefix') format('embedded-opentype'),
+	url('../fonts/passStar/passstar.woff2?0000') format('woff2'),
+	url('../fonts/passStar/passstar.woff?0000') format('woff'),
+	url('../fonts/passStar/passstar.ttf?0000') format('truetype'),
+	url('../fonts/passStar/passstar.svg?0000#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+input[type="password"] {
+	font-family: 'star', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	//letter-spacing: 2px;
+}
 
 $--sm: 576px;
 
