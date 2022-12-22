@@ -114,8 +114,10 @@
       label{
         transition: .4s;
         &:hover{
-          cursor: pointer;
-          color: #E0C463;
+          @include lg{
+            cursor: pointer;
+            color: #E0C463;
+          }
         }
       }
     }
