@@ -215,10 +215,13 @@ button {
 		display: none;
 	}
 	.whoflex-modal-hero{
-		top: 20px;
+		top: 0;
 		width: 100%;
 		left: 0;
-		position: absolute;
+		position: fixed;
+		background: #fff;
+		z-index: 1;
+		padding: 20px 0 10px;
 		box-shadow: rgb(0 0 0 / 10%) 0px 2px 2px;
 	}
 }
@@ -293,14 +296,11 @@ button {
 	visibility: hidden;
 	transform: scale(1.1);
 	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-	overflow-y: auto;
+	overflow-y: hidden;
 }
 @media only screen and (max-width: $--sm) {
 	.whoflex-signin-modal-content, .whoflex-signup-modal-content {
-		padding: 100px 16px 30px;
 		width: 100%;
-		height: auto;
-		min-height: 100%;
 	}
 }
 .whoflex-modal-content, .whoflex-signup-modal-content {
@@ -308,6 +308,9 @@ button {
 	background-color: white;
 }
 @media only screen and (min-width: $--sm) {
+	.whoflex-signin-modal, .whoflex-signup-modal{
+		overflow-y: auto;
+	}
 	.whoflex-modal-content, .whoflex-signup-modal-content {
 		position: absolute;
 		top: 50%;
@@ -340,7 +343,7 @@ button {
 	border-radius: 30px;
 	transition: 0.3s ease-in-out;
 	padding: 5px;
-	z-index: 1;
+	z-index: 2;
 	@include xs{
 		top: 10px;
 	}
@@ -373,7 +376,7 @@ button {
 	border-radius: 30px;
 	transition: 0.3s ease-in-out;
 	padding: 5px;
-	z-index: 1;
+	z-index: 2;
 	@include xs{
 		top: 10px;
 	}
@@ -551,6 +554,12 @@ select:-webkit-autofill:focus {
 	.signup-modal-container, .whoflex-signin-wrap-modal {
 		max-width: 380px;
 		margin: 0 auto;
+
+	}
+	.wrap-content-modal{
+		overflow: auto;
+		padding: 100px 20px;
+		height: 70vh;
 	}
 }
 @media only screen and (min-width: 1200px) {

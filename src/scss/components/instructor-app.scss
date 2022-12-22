@@ -25,6 +25,16 @@
     padding: 20px;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    @include lg{
+      box-shadow: none;
+      text-align: left;
+      background: transparent;
+      padding: 45px 0 20px;
+      img{
+        max-width: 127px;
+        margin-left: 65px;
+      }
+    }
   }
   &__wrapper {
     height: calc(90vh - 100px);
