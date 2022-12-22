@@ -170,6 +170,14 @@ function showPassFunction() {
         item.classList.add('d-none');
         const wrapPa = item.closest('.whoflex-input__wrap');
         const input = wrapPa.querySelector('input');
+        input.addEventListener('keyup',function (){
+            if(input.value.length > 0){
+                input.classList.add('fs10');
+            }
+            else {
+                input.classList.remove('fs10');
+            }
+        })
         input.addEventListener('keyup', function(){
             if(input.value.length > 0){
                 item.classList.remove('d-none');

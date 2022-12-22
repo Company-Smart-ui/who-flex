@@ -34,28 +34,20 @@
 }
 input[type="password"] {
 	transition: none;
-	font-size: 10px !important;
 	line-height: 1rem;
 	font-family: "passstar", sans-serif;
-	font-variant: normal;
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	letter-spacing: 1.5px;
 }
-.instructor-app{
-	input[type="password"] {
+input.fs10{
+	&[type="password"] {
 		font-size: 10px !important;
-		line-height: 1.3rem;
 	}
 }
 input{
 	transition: none !important;
 }
 input::placeholder{
+	font-family: 'Arial', sans-serif !important;
 	letter-spacing: normal;
-	font-size: 1rem !important;
 }
 
 $--sm: 576px;

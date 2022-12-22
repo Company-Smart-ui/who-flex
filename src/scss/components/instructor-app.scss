@@ -17,6 +17,10 @@
 
     &::placeholder {
       color: #999999;
+      font-size: 16px !important;
+      @include sm{
+        font-size: 18px !important;
+      }
     }
   }
   &__hero{
