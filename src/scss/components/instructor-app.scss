@@ -38,7 +38,8 @@
   }
   &__wrapper {
     height: calc(90vh - 100px);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 35px 16px 55px;
     max-width: 488px;
     background: #FFFFFF;
@@ -137,6 +138,12 @@
     }
     &:last-child{
       margin-bottom: 0;
+    }
+    .showPass{
+      top: 15px;
+      @include sm{
+        top: 23px;
+      }
     }
   }
   .whoflex-textarea{
