@@ -12,6 +12,7 @@ const password = document.getElementById('password');
 const agreement = document.getElementById('agreement');
 const btnPrev = document.querySelector(".whoflex-button__prev");
 const btnNext = document.querySelector(".whoflex-button__next");
+const textArea = document.querySelectorAll(".whoflex-textarea");
 
 
 function handleClick() {
@@ -210,3 +211,17 @@ function instApp (){
     }
 };
 instApp();
+
+(function(){
+    if(textArea){
+        textArea.forEach(item => {
+            const wrapPa = item.closest('.wrap-textarea');
+            item.addEventListener('focus', function (){
+                wrapPa.style.border = "2px solid #E0C463";
+            })
+            item.addEventListener('blur', function (){
+                wrapPa.style.border = "1px solid #ddd";
+            })
+        })
+    }
+}());

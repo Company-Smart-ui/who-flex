@@ -773,7 +773,26 @@ select:-webkit-autofill:focus {
 .whoflex-checkbox:checked+label{
 	font-weight: 700;
 }
-
+.wrap-textarea{
+	height: 120px;
+	border-radius: 10px;
+	border: 1px solid #DDDDDD;
+	@include lg{
+		height: 150px;
+	}
+	.whoflex-textarea{
+		border-radius: 10px;
+		height: 120px;
+		border-color: transparent;
+		@include lg{
+			height: 150px;
+		}
+		&:focus-visible, &:focus{
+			border-color: transparent!important;
+			outline: 0!important;
+		}
+	}
+}
 .whoflex-textarea{
 	box-sizing: border-box;
 	border: 1px solid #DDDDDD;
