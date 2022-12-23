@@ -498,6 +498,9 @@ select:-webkit-autofill:focus {
 		right: 15px;
 		cursor: pointer;
 		display: block;
+		&:hover{
+			text-decoration: underline;
+		}
 	}
 }
 
