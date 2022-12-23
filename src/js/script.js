@@ -71,7 +71,7 @@ function hideEmailSignUpEmail(e) {
     signupRightContainer.classList.remove("mt-36")
     whoflexAggrement.classList.add("mb-17", "mt-90")
     whoflexAggrement.classList.remove("mb-0", "mt-45" )
-    signupModalContainer.style.height = "679px"
+    // signupModalContainer.style.height = "679px"
     whoflexLeftTextContainer.style.bottom = "192px"
     signUpTitle.classList.add("d-none")
 }
@@ -90,7 +90,7 @@ function showEmailSignUpEmail(e) {
     signupRightContainer.classList.remove("mt-0")
     whoflexAggrement.classList.add("mb-0", "mt-45")
     whoflexAggrement.classList.remove("mb-17", "mt-90")
-    signupModalContainer.style.height = "642px"
+    // signupModalContainer.style.height = "642px"
     whoflexLeftTextContainer.style.bottom = "158px"
     signUpTitle.classList.remove("d-none")
 
