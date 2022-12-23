@@ -777,6 +777,7 @@ select:-webkit-autofill:focus {
 	height: 120px;
 	border-radius: 10px;
 	border: 1px solid #DDDDDD;
+	overflow: hidden;
 	@include lg{
 		height: 150px;
 	}
