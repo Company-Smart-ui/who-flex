@@ -745,6 +745,7 @@ select:-webkit-autofill:focus {
 	position: absolute;
 	z-index: -1;
 	opacity: 0;
+	top: 0;
 }
 .whoflex-checkbox+label {
 	display: inline-flex;
