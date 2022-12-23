@@ -349,11 +349,10 @@ button {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		max-height: 85vh;
-		overflow: auto;
+		overflow: hidden;
 	}
 	.whoflex-modal-content{
 		border-radius: 0.5rem;
-		padding: 48px 42px 43px;
 	}
 	.whoflex-signup-modal-content{
 		border-radius: 12px;
@@ -589,12 +588,19 @@ select:-webkit-autofill:focus {
 	.signup-modal-container, .whoflex-signin-wrap-modal {
 		max-width: 380px;
 		margin: 0 auto;
-
 	}
+}
+.wrap-content-modal{
+	padding: 100px 20px;
+	overflow: auto;
+	height: 70vh;
+}
+@media only screen and (min-width: $--sm){
 	.wrap-content-modal{
-		overflow: auto;
-		padding: 100px 20px;
-		height: 70vh;
+		padding: 0;
+	}
+	.whoflex-signin-modal .wrap-content-modal{
+		padding: 48px 42px 43px;
 	}
 }
 @media only screen and (min-width: 1200px) {
