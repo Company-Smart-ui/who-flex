@@ -14,6 +14,9 @@
 	<a href="instructor-application.html" style="padding: 10px 20px">
 		Instructor Application
 	</a>
+	<a href="reviews.html" style="padding: 10px 20px">
+		reviews
+	</a>
 	<button class="signin-trigger" style="padding: 10px 20px">
 		Open Sign In
 	</button>
@@ -32,7 +35,7 @@
 					<form>
 						<div class="mb-16">
 							<label class="whoflex-label" for="signinEmail">Email</label>
-							<input class="whoflex-input" type="email" id="signinEmail" onkeyup="checkSignInEmailValidation()"/>
+							<input class="whoflex-input" type="email" id="signinEmail" onchange="checkSignInEmailValidation()"/>
 							<span class="mt-8 text-red helper-text error-message" id="signin-error-message">Please enter a valid email</span>
 						</div>
 						<div class="whoflex-input__wrap mb-16">
@@ -153,13 +156,13 @@
 
 									<div class="mb-16">
 										<label class="whoflex-label" for="signupEmail">Email</label>
-										<input class="whoflex-input" type="email" id="signupEmail" onkeyup="checkSignUpEmailValidation()"/>
+										<input class="whoflex-input" type="email" id="signupEmail" onchange="checkSignUpEmailValidation()"/>
 										<span class="mt-8 text-red helper-text error-message" id="signup-error-message">Please enter a valid email</span>
 									</div>
 
 									<div class="whoflex-input__wrap mb-35">
 										<label class="whoflex-label" for="password">Password</label>
-										<input class="whoflex-input password" type="password" id="password" onkeyup="checkPassValidation()" />
+										<input class="whoflex-input password" type="password" id="password" onchange="checkPassValidation()" />
 										<span class="showPass">Show</span>
 										<span class="mt-8 d-block text-gray helper-text" id="passHelpText">Password must be at least 6 characters.</span>
 									</div>

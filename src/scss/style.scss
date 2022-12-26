@@ -336,7 +336,8 @@ button {
 	box-sizing: border-box;
 	background-color: white;
 	input[type="password"] {
-		font-size: 10px !important;
+		font-size: 6px!important;
+		letter-spacing: 5px;
 	}
 }
 @media only screen and (min-width: $--sm) {
@@ -463,7 +464,17 @@ select:-webkit-autofill:focus {
 	margin-bottom: 5px;
 	margin-top: 0;
 }
-
+textarea {
+	resize: none;
+}
+.whoflex-textarea{
+	background-color: #ffffff;
+	border-radius: 6px;
+	line-height: 21px;
+	@include lg{
+		border-radius: 10px;
+	}
+}
 .whoflex-input {
 	font-family: 'Arial';
 	padding: 11.12px 12px;
@@ -520,11 +531,21 @@ select:-webkit-autofill:focus {
 	border: 0;
 	padding: 17.68px 12px;
 	cursor: pointer;
+	&_black{
+		background: #111111;
+	}
 }
 
 @media only screen and (min-width: 991px){
-	.whoflex-button:hover {
-		background-color: #343434;
+	.whoflex-button{
+		&:hover {
+			background-color: #343434;
+		}
+		&_black{
+			&:hover{
+				background-color: grey;
+			}
+		}
 	}
 }
 

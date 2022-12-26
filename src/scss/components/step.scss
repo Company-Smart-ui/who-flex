@@ -25,17 +25,19 @@
     }
     .whoflex-agreement{
       font-size: 14px;
-      margin-bottom: 15px;
+      margin-bottom: 35px;
       color: #111111;
       @include lg{
         margin-bottom: 22px;
       }
       .whoflex-checkbox+label{
+        position: relative;
         flex-wrap: wrap;
+        padding-left: 35px;
         .whoflex-link{
-          padding: 0 8px;
+          margin: 0 8px;
           &:last-child{
-            padding-right: 0;
+            margin-right: 0;
           }
         }
       }
@@ -46,6 +48,9 @@
       .whoflex-checkbox+label::before{
         width: 20px;
         height: 20px;
+        left: 0;
+        position: absolute;
+        top: 0;
       }
       .whoflex-checkbox:checked+label{
         font-weight: 400;

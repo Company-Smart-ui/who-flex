@@ -26,9 +26,11 @@
       }
     }
     &[type="password"] {
-      line-height: 1.2rem;
+      font-size: 10px!important;
+      letter-spacing: 5px;
+      min-height: 48.5px;
       @include sm{
-        line-height: 1.3rem;
+        height: 64.67px;
       }
     }
   }
@@ -166,12 +168,8 @@
       }
     }
   }
-  .whoflex-textarea{
-    border-radius: 6px;
-    line-height: 21px;
-    @include lg{
-      border-radius: 10px;
-    }
+  .wrap-textarea{
+
   }
   .whoflex-input{
     padding: 14px 16px;
@@ -234,14 +232,21 @@
       font-size: 14px;
       line-height: 21px;
     }
+    .tryAgain{
+      &:hover{
+        path{
+          stroke: black;
+        }
+      }
+    }
     .comment_delete{
       position: absolute;
       right: 55px;
-      height: 18px;
-      width: 18px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url('./../images/icons/delete.png');
+      &:hover{
+        path{
+          fill: black;
+        }
+      }
     }
     .icon-done{
       display: none;
@@ -304,6 +309,10 @@
 }
 .tryAgain{
   margin-left: auto;
+  display: none;
+  @include sm{
+    display: block;
+  }
   .paperClip{
     margin: 0;
   }
