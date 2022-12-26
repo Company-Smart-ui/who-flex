@@ -9,7 +9,6 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const instructorAppEmail = document.getElementById('email');
 const password = document.getElementById('password');
-const agreement = document.getElementById('agreement');
 const btnPrev = document.querySelector(".whoflex-button__prev");
 const btnNext = document.querySelector(".whoflex-button__next");
 const textArea = document.querySelectorAll(".whoflex-textarea");

@@ -120,6 +120,11 @@
           }
         }
       }
+      .whoflex-checkbox:checked+label{
+        &:hover{
+          color: #666666;
+        }
+      }
     }
   }
 }

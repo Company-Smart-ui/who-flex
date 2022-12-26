@@ -40,7 +40,12 @@
     padding: 20px 0 10px;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
     @include sm{
+      position: relative;
       box-shadow: none;
       text-align: left;
       background: transparent;
@@ -55,21 +60,19 @@
     }
   }
   &__wrapper {
-    height: calc(90vh - 100px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 35px 16px 55px;
     max-width: 488px;
     background: #FFFFFF;
     box-shadow: 0 0 18px 9px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
-    margin: 0 16px;
+    margin: 113px 16px 50px;
     box-sizing: border-box;
     @include sm{
       padding: 30px 36px 65px;
       max-width: 700px;
       height: auto;
-      margin-bottom: 80px;
+      margin: 0 16px 80px;
     }
     @include lg{
       padding: 30px 56px 65px;
@@ -182,6 +185,9 @@
   }
   .helper-text{
     color: #666666;
+  }
+  .whoflex-agreement{
+    position: relative;
   }
 }
 
@@ -309,10 +315,6 @@
 }
 .tryAgain{
   margin-left: auto;
-  display: none;
-  @include sm{
-    display: block;
-  }
   .paperClip{
     margin: 0;
   }
