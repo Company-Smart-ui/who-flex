@@ -91,7 +91,7 @@
   &__body {
     max-height: 0;
     overflow: hidden;
-    transition: 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    //transition: 1s cubic-bezier(0.22, 0.61, 0.36, 1);
     border-bottom: 1px solid #cccccc;
   }
 
@@ -112,7 +112,7 @@
         margin-bottom: 0;
       }
       label{
-        transition: .4s;
+        //transition: .4s;
         &:hover{
           @include lg{
             cursor: pointer;
