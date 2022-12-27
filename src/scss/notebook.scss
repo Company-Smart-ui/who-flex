@@ -9,6 +9,7 @@
   margin: 0 auto;
   &__wrap{
     max-width: 840px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -42,7 +43,7 @@
   .accordion{
     max-width: none;
     &__item{
-      margin-bottom: 45px;
+      margin-bottom: 25px;
       &:first-child{
         .accordion__title-text{
           border: none;
