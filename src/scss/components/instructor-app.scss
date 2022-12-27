@@ -275,6 +275,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    word-wrap: break-word;
     &:hover{
       border-bottom: 2px solid #E0C463;
     }
