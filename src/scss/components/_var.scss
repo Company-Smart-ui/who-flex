@@ -4,6 +4,7 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+$xxxl: 1920px;
 @mixin xs {
   @media (min-width:$xs) {
     @content
@@ -31,6 +32,11 @@ $xxl: 1400px;
 };
 @mixin xxl {
   @media (min-width:$xxl) {
+    @content
+  }
+};
+@mixin xxxl {
+  @media (min-width:$xxxl) {
     @content
   }
 };

@@ -189,9 +189,13 @@ function showPassFunction() {
             if (input.type === "password") {
                 input.type = "text";
                 item.innerHTML = "Hide";
+                input.focus();
+                input.selectionStart = input.value.length;
             } else {
                 input.type = "password";
                 item.innerHTML = "Show";
+                input.focus();
+                input.selectionStart = input.value.length;
             }
         })
     })
