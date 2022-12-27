@@ -52,9 +52,15 @@
       border: none;
       padding: 10px 50px 10px 20px;
       font-weight: 700;
-      font-size: 18px;
-      line-height: 37px;
+      font-size: 15px;
+      line-height: 23px;
       color: #111111;
+      @include sm{
+        font-size: 18px;
+      }
+      @include md{
+        line-height: 37px;
+      }
       &::before{
         right: 28px;
         top: calc(50% + 2px);
@@ -79,9 +85,13 @@
       display: flex;
       align-items: center;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 31px;
       margin: 0;
+      width: calc(100% - 100px);
+      @include sm{
+        font-size: 18px;
+      }
       svg{
         margin-right: 17px;
       }
@@ -91,12 +101,14 @@
         background: transparent;
         border: none;
         position: absolute;
-        top: 23px;
-        &:hover{
-          path{
-            transition: .4s;
-            fill: black;
-            stroke: black;
+        top: 30px;
+        @include md{
+          &:hover{
+            path{
+              transition: .4s;
+              fill: black;
+              stroke: black;
+            }
           }
         }
       }
@@ -104,10 +116,13 @@
     &__notebook-text{
       max-width: 570px;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 22px;
       color: #666;
       margin: 0 0 0 35px;
+      @include sm{
+        font-size: 16px;
+      }
       &[contenteditable="true"]:active,
       &[contenteditable="true"]:focus{
         border: 1px solid #e0c463;
@@ -130,11 +145,14 @@
   justify-content: space-between;
   align-items: center;
   color: #666666;
-  font-size: 17px;
   line-height: 31px;
   padding-bottom: 42px;
   border-bottom: 1px solid #CCCCCC;
   margin-bottom: 50px;
+  font-size: 14px;
+  @include sm{
+    font-size: 17px;
+  }
   p{
     margin: 0;
   }
