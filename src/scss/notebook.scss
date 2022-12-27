@@ -57,6 +57,9 @@
             top: calc(50% - 0px);
           }
         }
+        .accordion__body{
+          padding: 0;
+        }
       }
     }
     &__title-text{
@@ -88,7 +91,15 @@
     }
     &__body-wrap{
       position: relative;
-      padding: 25px 0;
+      &:first-child{
+        padding: 20px 0 25px;
+      }
+      &:not(:first-child) {
+        padding: 25px 0;
+        .accordion__svg button{
+          top: 31px;
+        }
+      }
       &:not(:last-child) {
         border-bottom: 1px solid #ddd;
       }
@@ -104,6 +115,7 @@
       width: calc(100% - 100px);
       @include sm{
         font-size: 18px;
+        margin-bottom: 3px;
       }
       svg{
         margin-right: 17px;
@@ -114,7 +126,7 @@
         background: transparent;
         border: none;
         position: absolute;
-        top: 30px;
+        top: 25px;
         @include md{
           &:hover{
             path{
