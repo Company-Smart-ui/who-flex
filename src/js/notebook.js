@@ -91,7 +91,6 @@ function createBlock(){
             if (e.keyCode === 13) {
                 if(createText.value.length > 1 && createText.value !== " "){
                     createText.select();
-                    console.log(createText.value.length);
                     document.execCommand("copy");
                     createBlock(createText.value);
                     createText.blur();
