@@ -36,15 +36,8 @@ input[type="password"] {
 	transition: none;
 	line-height: 1rem;
 	font-family: "passstar", sans-serif;
-	font-size: 17px !important;
+	font-size: 16px !important;
 	letter-spacing: 0.1em;
-	//text-security: square;
-	//-webkit-text-security: square;
-}
-input.fs10{
-	&[type="password"] {
-		font-size: 10px !important;
-	}
 }
 input{
 	transition: none !important;
@@ -338,7 +331,7 @@ button {
 	box-sizing: border-box;
 	background-color: white;
 	input[type="password"] {
-		font-size: 6px!important;
+		font-size: 12px!important;
 		letter-spacing: 5px;
 	}
 }

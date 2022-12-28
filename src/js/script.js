@@ -188,12 +188,6 @@ function showPassFunction() {
                 input.type = "text";
                 item.innerHTML = "Hide";
 
-
-
-                // const style = window.getComputedStyle(item);
-                // if (!style.webkitTextSecurity && !style.textSecurity) {
-                //     item.setAttribute("type", "password");
-                // }
             } else {
                 input.type = "password";
                 item.innerHTML = "Show";
