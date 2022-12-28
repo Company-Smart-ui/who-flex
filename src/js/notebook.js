@@ -1,45 +1,53 @@
-const edit = document.querySelectorAll('.notebook__edit');
-const deleteText = document.querySelectorAll('.notebook__delete');
-const text = document.querySelectorAll('.accordion__notebook-text');
+let edit = document.querySelectorAll('.notebook__edit');
+let deleteText = document.querySelectorAll('.notebook__delete');
+let text = document.querySelectorAll('.accordion__notebook-text');
 const arentInfo = document.querySelector('.arent-info');
 const createText = document.getElementById('createText');
 
 
-if(edit && text){
-    for( let i = 0; i < edit.length; i++ ){
-        let editMode = false;
+function editText(){
+    if(edit && text){
+        edit = document.querySelectorAll('.notebook__edit');
+        text = document.querySelectorAll('.accordion__notebook-text');
+        for( let i = 0; i < edit.length; i++ ){
+            // edit.forEach(item => {
+            let editMode = false;
 
-        edit[i].addEventListener('click', function(){
-            if( editMode ) {
-                text[i].removeAttribute('contentEditable');
-            } else {
-                text[i].setAttribute('contentEditable', true);
-                text[i].focus();
-            }
-            text[i].addEventListener('blur', function (){
-                text[i].removeAttribute('contentEditable');
-                editMode = false;
-            })
+            edit[i].addEventListener('click', function(){
+                if( editMode ) {
+                    text[i].removeAttribute('contentEditable');
+                } else {
+                    text[i].setAttribute('contentEditable', true);
+                    text[i].focus();
+                }
+                text[i].addEventListener('blur', function (){
+                    text[i].removeAttribute('contentEditable');
+                    editMode = false;
+                })
 
-            editMode = !editMode;
-        });
+                editMode = !editMode;
+            });
+        }
     }
 }
-if(deleteText){
-    deleteText.forEach(item => {
-        item.addEventListener('click', function(){
-           const parent = item.closest('.accordion__body-wrap');
-           const mainParent = item.closest('.accordion__item');
-            parent.remove();
-            if(!mainParent.querySelector('.accordion__body-wrap')){
-                mainParent.remove();
-            }
-            arentInfoF();
+editText();
+function deleteTextF(){
+    if(deleteText){
+        deleteText = document.querySelectorAll('.notebook__delete');
+        deleteText.forEach(item => {
+            item.addEventListener('click', function(){
+                const parent = item.closest('.accordion__body-wrap');
+                const mainParent = item.closest('.accordion__item');
+                parent.remove();
+                if(!mainParent.querySelector('.accordion__body-wrap')){
+                    mainParent.remove();
+                }
+                arentInfoF();
+            })
         })
-    })
+    }
 }
-
-
+deleteTextF();
 
 const accordion = arentInfo.querySelector('.accordion');
 const arent = arentInfo.querySelector('.arent')
@@ -54,7 +62,7 @@ function arentInfoF(){
 function createBlock(){
     arent.classList.add('d-none');
     const addAccItem = document.createElement('div');
-    addAccItem.className = 'accordion__item 1';
+    addAccItem.className = 'accordion__item';
     addAccItem.innerHTML = "<h3 type=\"button\" class=\"accordion__title-text\">Introduction</h3>\n" +
         "<div class=\"accordion__body\">\n" +
         "                        <div class=\"accordion__body-wrap\">\n" +
@@ -82,6 +90,19 @@ function createBlock(){
         "                            <p class=\"accordion__notebook-text\">" +
         createText.value + "</p></div></div>";
     accordion.append(addAccItem);
+    const title = addAccItem.querySelector(".accordion__title-text");
+    const body = addAccItem.querySelector(".accordion__body");
+    title.addEventListener("click", ( ) => {
+        if (addAccItem.classList.contains("is-open")) {
+            body.removeAttribute("style");
+            addAccItem.classList.remove("is-open");
+        } else {
+            body.style.overflow = 'hidden';
+            body.style.transition = 'max-height 5s cubic-bezier(0.22, 0.61, 0.36, 1)';
+            body.style.maxHeight = '2000px';
+            addAccItem.classList.add("is-open");
+        }
+    });
 }
 
 (function(){
@@ -99,6 +120,8 @@ function createBlock(){
                     createText.blur();
                     createText.value = "";
                 }
+                editText();
+                deleteTextF();
             }
         });
     }

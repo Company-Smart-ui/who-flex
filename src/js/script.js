@@ -194,6 +194,7 @@ function showPassFunction() {
             if (input.type === "password") {
                 input.type = "text";
                 item.innerHTML = "Hide";
+
             } else {
                 input.type = "password";
                 item.innerHTML = "Show";

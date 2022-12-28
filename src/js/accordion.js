@@ -1,6 +1,3 @@
-const createText = document.getElementById('createText');
-
-
 function accordionInit(accordion) {
   window.addEventListener("load", function () {
     accordionF(accordion)
@@ -9,14 +6,6 @@ function accordionInit(accordion) {
 
 function accordionF(accordion){
   let items = accordion.querySelectorAll(".accordion__item");
-
-  if(createText){
-    createText.addEventListener("keyup", function(e) {
-      if (e.keyCode === 13) {
-        items = accordion.querySelectorAll(".accordion__item");
-      }
-    });
-  }
   items.forEach((item) => {
     const title = item.querySelector(".accordion__title-text");
     title.addEventListener("click", ( ) => {
@@ -26,11 +15,7 @@ function accordionF(accordion){
 
 
   const openedItem = (item) => {
-    // const opened_item = accordion.querySelector(".is-open");
     toggle_item(item);
-    // if (opened_item && opened_item !== item) {
-    //   toggle_item(opened_item);
-    // }
   };
 
   const toggle_item = (item) => {
