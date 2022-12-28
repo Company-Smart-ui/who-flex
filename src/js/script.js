@@ -153,12 +153,18 @@ function checkEmailValidation() {
 function checkPassValidation() {
     const password = document.getElementById("password");
     const passHelpText = document.getElementById("passHelpText");
-    if (password.value.length < 6) {
-        passHelpText.style.color = "#ea4335";
-        password.style.border = "1px solid #ea4335";
+    password.addEventListener('change', function(){
+        if (password.value.length < 6) {
+            passHelpText.style.color = "#ea4335";
+            password.style.border = "1px solid #ea4335";
 
-        password.focus();
-    } else {
+            password.focus();
+        } else {
+            passHelpText.style.color = "#666666";
+            password.style.border = "1px solid #dddddd";
+        }
+    })
+    if (password.value.length >= 6) {
         passHelpText.style.color = "#666666";
         password.style.border = "1px solid #dddddd";
     }
@@ -184,6 +190,10 @@ function showPassFunction() {
             }else{
                 item.classList.add('d-none');
             }
+        })
+        input.addEventListener('click', function (){
+            input.focus();
+            input.selectionStart = input.value.length;
         })
         item.addEventListener('click', function(){
             if (input.type === "password") {
