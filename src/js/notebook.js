@@ -1,8 +1,10 @@
 let edit = document.querySelectorAll('.notebook__edit');
 let deleteText = document.querySelectorAll('.notebook__delete');
 let text = document.querySelectorAll('.accordion__notebook-text');
+let bodyAccordion = document.querySelectorAll('.accordion__body-wrap');
 const arentInfo = document.querySelector('.arent-info');
 const createText = document.getElementById('createText');
+const counterAcc = document.getElementById('counterAcc');
 
 
 function editText(){
@@ -10,15 +12,20 @@ function editText(){
         edit = document.querySelectorAll('.notebook__edit');
         text = document.querySelectorAll('.accordion__notebook-text');
         for( let i = 0; i < edit.length; i++ ){
-            // edit.forEach(item => {
             let editMode = false;
-
             edit[i].addEventListener('click', function(){
                 if( editMode ) {
                     text[i].removeAttribute('contentEditable');
                 } else {
                     text[i].setAttribute('contentEditable', true);
                     text[i].focus();
+
+                    const range = document.createRange();
+                    range.selectNodeContents(text[i]);
+                    range.collapse(false);
+                    const sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
                 }
                 text[i].addEventListener('blur', function (){
                     text[i].removeAttribute('contentEditable');
@@ -43,15 +50,22 @@ function deleteTextF(){
                     mainParent.remove();
                 }
                 arentInfoF();
+                counter();
             })
         })
     }
 }
 deleteTextF();
 
+function counter(){
+    bodyAccordion = document.querySelectorAll('.accordion__body-wrap');
+    let num = bodyAccordion.length;
+    counterAcc.innerHTML = String(num);
+}
+counter();
+
 const accordion = arentInfo.querySelector('.accordion');
 const arent = arentInfo.querySelector('.arent')
-
 
 function arentInfoF(){
     arent.classList.add('d-none');
@@ -122,6 +136,7 @@ function createBlock(){
                 }
                 editText();
                 deleteTextF();
+                counter();
             }
         });
     }
