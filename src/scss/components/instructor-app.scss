@@ -212,6 +212,16 @@
           line-height: 21px;
           color: #111111;
           border-bottom: 2px solid transparent;
+          max-width: 200px;
+          @media screen and (min-width: 420px) {
+            max-width: 290px;
+          }
+          @include sm{
+            max-width: 390px;
+          }
+          @include md{
+            max-width: none;
+          }
         }
         &__button{
           justify-content: flex-start;
