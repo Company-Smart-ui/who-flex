@@ -14,12 +14,10 @@ function accordionF(accordion){
     createText.addEventListener("keyup", function(e) {
       if (e.keyCode === 13) {
         items = accordion.querySelectorAll(".accordion__item");
-        console.log(items);
       }
     });
   }
   items.forEach((item) => {
-    console.log("---",items);
     const title = item.querySelector(".accordion__title-text");
     title.addEventListener("click", ( ) => {
       openedItem(item)
