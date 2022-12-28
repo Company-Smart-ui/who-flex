@@ -157,13 +157,12 @@ function checkPassValidation() {
         if (password.value.length < 6) {
             passHelpText.style.color = "#ea4335";
             password.style.border = "1px solid #ea4335";
-
-            password.focus();
         } else {
             passHelpText.style.color = "#666666";
             password.style.border = "1px solid #dddddd";
         }
     })
+
     if (password.value.length >= 6) {
         passHelpText.style.color = "#666666";
         password.style.border = "1px solid #dddddd";
@@ -191,22 +190,16 @@ function showPassFunction() {
                 item.classList.add('d-none');
             }
         })
-        input.addEventListener('click', function (){
-            input.focus();
-            input.selectionStart = input.value.length;
-        })
         item.addEventListener('click', function(){
             if (input.type === "password") {
                 input.type = "text";
                 item.innerHTML = "Hide";
-                input.focus();
-                input.selectionStart = input.value.length;
             } else {
                 input.type = "password";
                 item.innerHTML = "Show";
-                input.focus();
-                input.selectionStart = input.value.length;
             }
+            input.focus();
+            input.selectionStart = input.value.length;
         })
     })
 };
