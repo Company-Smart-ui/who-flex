@@ -4,14 +4,16 @@
 
   margin: 0 auto;
   text-align: center;
-  &.full{
-    height: 100vh;
+  &.full {
+    padding: 100px 16px 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #EEEEEE;
-    padding: 0 16px;
+  }
+  &__qA{
+    padding: 48px 16px 90px;
   }
   &__wrap{
     max-width: 460px;
