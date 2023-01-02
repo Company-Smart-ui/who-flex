@@ -24,7 +24,7 @@
     }
   }
   &__wrap-img{
-    margin-bottom: 17px;
+    margin-bottom: 35px;
     @include lg{
       margin-bottom: 23px;
     }
@@ -62,7 +62,9 @@
     width: auto;
     padding: 16px 31px;
     margin-top: 24px;
-
+  }
+  .whoflex-button_black:hover{
+    background-color: #343434;
   }
   .wrap-textarea{
     height: 90px;
