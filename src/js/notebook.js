@@ -76,7 +76,7 @@ function arentInfoF(){
 function createBlock(){
     arent.classList.add('d-none');
     const addAccItem = document.createElement('div');
-    addAccItem.className = 'accordion__item';
+    addAccItem.className = 'accordion__item is-open';
     addAccItem.innerHTML = "<h3 type=\"button\" class=\"accordion__title-text\">Introduction</h3>\n" +
         "<div class=\"accordion__body\">\n" +
         "                        <div class=\"accordion__body-wrap\">\n" +
@@ -104,6 +104,13 @@ function createBlock(){
         "                            <p class=\"accordion__notebook-text\">" +
         createText.value + "</p></div></div>";
     accordion.append(addAccItem);
+
+    const accBody = addAccItem.querySelector('.accordion__body');
+    accBody.style.overflow = 'hidden';
+    accBody.style.transition = 'max-height 5s cubic-bezier(0.22, 0.61, 0.36, 1)';
+    accBody.style.maxHeight = '2000px';
+
+    addAccItem.classList.add("is-open");
     const title = addAccItem.querySelector(".accordion__title-text");
     const body = addAccItem.querySelector(".accordion__body");
     title.addEventListener("click", ( ) => {
@@ -128,7 +135,7 @@ function createBlock(){
                     createText.select();
                     document.execCommand("copy");
                     createBlock(createText.value);
-                    createText.blur();
+                    createText.focus();
                     createText.value = "";
                 } else{
                     createText.blur();
