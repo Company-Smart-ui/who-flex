@@ -116,9 +116,6 @@ body{
       width: 33%;
       background-color: #fff;
     }
-    &:last-child{
-      margin-bottom: 0;
-    }
     &.visible{
       display: block;
     }
@@ -126,15 +123,28 @@ body{
       display: block !important;
     }
   }
+  &__col-last{
+    @include l{
+      width: 33%;
+    }
+    .nav__col{
+      width: 100%;
+    }
+  }
   &__items{
-
+    ul{
+      li:last-child{
+        a{
+          margin-bottom: 0;
+        }
+      }
+    }
   }
   &__link{
     display: inline-block;
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
-    //line-height: 40px;
     color: #333333;
     transition: .3s;
     margin-bottom: 25px;
@@ -164,6 +174,10 @@ body{
     font-family: 'Arial', serif;
     font-weight: 700;
     font-size: 20px;
+    margin-bottom: 10px;
+    @include l{
+      margin-bottom: 0;
+    }
   }
   &__label-icon{
     display: none;
@@ -173,12 +187,13 @@ body{
     }
   }
   &__banner{
-    display: none;
     margin-top: 80px;
+    margin-bottom: 40px;
     color: #000000;
     text-decoration: none;
     @include l{
       display: block;
+      margin-bottom: 0;
     }
     &:hover{
       p{
@@ -202,6 +217,7 @@ body{
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
+    max-height: 500px;
     picture{
       overflow: hidden;
       height: 0;
@@ -209,6 +225,8 @@ body{
     }
     img{
       width: 100%;
+      height: auto;
+      max-width: 100%;
     }
   }
 }
