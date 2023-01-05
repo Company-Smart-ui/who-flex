@@ -211,6 +211,7 @@ function instApp (){
 instApp();
 
 (function(){
+    const notebook = document.querySelector('.notebook');
     if(textArea){
         textArea.forEach(item => {
             const wrapPa = item.closest('.wrap-textarea');
@@ -220,6 +221,14 @@ instApp();
             item.addEventListener('blur', function (){
                 wrapPa.style.border = "1px solid #ddd";
             })
+            if(notebook){
+                item.addEventListener('focus', function (){
+                    wrapPa.style.outline = "2px solid #E0C463";
+                })
+                item.addEventListener('blur', function (){
+                    wrapPa.style.outline = "1px solid #000";
+                })
+            }
         })
     }
 }());

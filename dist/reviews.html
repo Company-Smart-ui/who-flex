@@ -23,6 +23,15 @@
         </div>
 
         <div class="arent full">
+            <div class="left ovv_qna_write openQnaWritePop w-100">
+                <div class="reply_textarea reply_textarea_big">
+                    <textarea name="" id="" cols="30" rows="1" placeholder="Start a conversation or ask your question here…"></textarea>
+
+                    <div class="button_reply_wrap">
+                        <button type="button" class="button_reply">Comment</button>
+                    </div>
+                </div>
+            </div>
                 <div class="arent__wrap">
         <div class="arent__wrap-img">
             <img src="./images/q_a-not.svg" alt="q_a-not.svg">
@@ -160,6 +169,19 @@
     <section class="class-end">
 
     </section>
+    <script>
+        const openQnaWritePop = document.querySelector('.openQnaWritePop');
+        if(openQnaWritePop){
+            const textArea = openQnaWritePop.querySelector('textarea');
+            const replyTextareaBig = openQnaWritePop.querySelector('.reply_textarea_big');
+            textArea.addEventListener('focus', function (){
+                replyTextareaBig.classList.add('focus')
+            })
+            textArea.addEventListener('blur', function (){
+                replyTextareaBig.classList.remove('focus')
+            })
+        }
+    </script>
     <script src="js/script.js"></script>
     <script src="js/accordion.js"></script>
     <script src="js/instructor-app.js"></script>
