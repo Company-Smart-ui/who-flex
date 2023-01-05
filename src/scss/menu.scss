@@ -187,12 +187,12 @@ body{
     }
   }
   &__banner{
-    margin-top: 80px;
+    display: block;
     margin-bottom: 40px;
     color: #000000;
     text-decoration: none;
     @include l{
-      display: block;
+      margin-top: 80px;
       margin-bottom: 0;
     }
     &:hover{
