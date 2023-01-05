@@ -128,7 +128,11 @@ body{
       width: 33%;
     }
     .nav__col{
+      margin-bottom: 35px;
       width: 100%;
+      @include l{
+        margin-bottom: 0;
+      }
     }
   }
   &__items{
