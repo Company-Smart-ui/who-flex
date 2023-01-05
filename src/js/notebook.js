@@ -18,6 +18,11 @@ function editText(){
                     text[i].removeAttribute('contentEditable');
                 } else {
                     text[i].setAttribute('contentEditable', true);
+                    text[i].addEventListener("paste", function(e) {
+                        e.preventDefault();
+                        const text = (e.originalEvent || e).clipboardData.getData('text/plain');
+                        document.execCommand("insertHTML", false, text);
+                    });
                     text[i].focus();
 
                     const range = document.createRange();
@@ -28,7 +33,6 @@ function editText(){
                     sel.addRange(range);
 
                     text[i].addEventListener('keyup', function(){
-                        console.log(text[i].innerHTML.length)
                         if(text[i].innerHTML.length > 1000) {
                             const currText = text[i].innerHTML.substring(0, 1000);
                             text[i].innerHTML = currText;
