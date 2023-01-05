@@ -28,6 +28,13 @@ function editText(){
                     sel.addRange(range);
                 }
                 text[i].addEventListener('blur', function (){
+                    const divs = text[i].querySelectorAll('div');
+                    divs.forEach(div => {
+                        if(div.innerHTML === `<br>`){
+                            div.remove()
+                        }
+                    })
+
                     text[i].removeAttribute('contentEditable');
                     editMode = false;
                 })
@@ -101,7 +108,9 @@ function createBlock(){
         "                                </svg>\n" +
         "                                Why the future of work matters (00:24)\n" +
         "                            </h4>\n" +
-        "                            <p class=\"accordion__notebook-text\">" +
+        "                            <div className=\"accordion__notebook-wrap-text\">\n " +
+        "                               <p class=\"accordion__notebook-text\">" +
+        "                            </div>\n" +
         createText.value + "</p></div></div>";
     accordion.append(addAccItem);
 

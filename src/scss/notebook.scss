@@ -30,11 +30,6 @@
     border: none !important;
     outline: 1px solid black;
   }
-  .whoflex-textarea:focus{
-    .wrap-textarea{
-      outline: 1px solid red;
-    }
-  }
   .comment{
     position: absolute;
     z-index: 1;
@@ -51,6 +46,9 @@
   }
   .arent__text{
     color: #000000;
+  }
+  .arent__wrap-img{
+    margin-bottom: 0;
   }
   .whoflex-textarea{
     padding: 20px;
@@ -127,18 +125,21 @@
     &__audio{
       color: #e0c463;
       display: flex;
-      align-items: center;
       font-weight: 700;
       font-size: 16px;
-      line-height: 31px;
       margin: 0;
       width: calc(100% - 100px);
       @include sm{
         font-size: 18px;
+        line-height: 31px;
         margin-bottom: 3px;
       }
       svg{
         margin-right: 17px;
+        margin-top: 3px;
+        @include sm{
+          margin-top: 5px;
+        }
       }
     }
     &__svg{
@@ -157,6 +158,10 @@
         }
       }
     }
+    &__notebook-wrap-text{
+      overflow: hidden;
+      border-radius: 10px;
+    }
     &__notebook-text{
       max-width: 570px;
       font-weight: 400;
@@ -164,6 +169,10 @@
       line-height: 22px;
       color: #666;
       margin: 0 0 0 35px;
+      overflow-wrap: anywhere;
+
+      overflow: auto;
+      max-height: 70px;
       @include sm{
         font-size: 16px;
       }
