@@ -52,6 +52,9 @@
   }
   .whoflex-textarea{
     padding: 20px;
+    @include lg{
+      font-size: 17px;
+    }
     &::placeholder{
       font-size: 18px;
     }
