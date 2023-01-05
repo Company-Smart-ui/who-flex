@@ -26,6 +26,19 @@ function editText(){
                     const sel = window.getSelection();
                     sel.removeAllRanges();
                     sel.addRange(range);
+
+                    text[i].addEventListener('keyup', function(){
+                        console.log(text[i].innerHTML.length)
+                        if(text[i].innerHTML.length > 1000) {
+                            const currText = text[i].innerHTML.substring(0, 1000);
+                            text[i].innerHTML = currText;
+
+                            range.selectNodeContents(text[i]);
+                            range.collapse(false);
+                            sel.removeAllRanges();
+                            sel.addRange(range);
+                        }
+                    })
                 }
                 text[i].addEventListener('blur', function (){
                     const divs = text[i].querySelectorAll('div');
@@ -110,8 +123,7 @@ function createBlock(){
         "                            </h4>\n" +
         "                            <div className=\"accordion__notebook-wrap-text\">\n " +
         "                               <p class=\"accordion__notebook-text\">" +
-        "                            </div>\n" +
-        createText.value + "</p></div></div>";
+        createText.value + "</p></div></div></div>";
     accordion.append(addAccItem);
 
     const accBody = addAccItem.querySelector('.accordion__body');

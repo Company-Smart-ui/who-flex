@@ -51,12 +51,14 @@
     margin-bottom: 0;
   }
   .whoflex-textarea{
-    padding: 20px;
     @include lg{
+      padding: 20px;
       font-size: 17px;
     }
     &::placeholder{
-      font-size: 18px;
+      @include l{
+        font-size: 18px;
+      }
     }
   }
   .accordion{
@@ -130,17 +132,23 @@
       display: flex;
       font-weight: 700;
       font-size: 16px;
-      margin: 0;
-      width: calc(100% - 100px);
+      margin: 0 0 10px;
+      width: calc(100% - 75px);
       @include sm{
         font-size: 18px;
         line-height: 31px;
         margin-bottom: 3px;
+        width: calc(100% - 100px);
+      }
+      span{
+        width: calc(100% - 37px);
       }
       svg{
-        margin-right: 17px;
+        width: 20px;
+        margin-right: 10px;
         margin-top: 3px;
         @include sm{
+          margin-right: 15px;
           margin-top: 5px;
         }
       }
@@ -170,13 +178,11 @@
       font-size: 14px;
       line-height: 22px;
       color: #666;
-      margin: 0 15px 0 35px;
+      margin: 0 0 0 30px;
       overflow-wrap: anywhere;
-
-      overflow: auto;
-      max-height: 70px;
       @include sm{
         font-size: 16px;
+        margin: 0 35px;
       }
       &[contenteditable="true"]:active,
       &[contenteditable="true"]:focus{
@@ -277,7 +283,7 @@
 .reply_textarea.reply_textarea_big textarea {
   min-height: 75px;
   display: block;
-  width: calc(100% - 10px);
+  width: calc(100% - 30px);
   line-height: 1.6;
 
   font-size: 15px;
