@@ -166,6 +166,13 @@ body{
       color: $accentColor;
       text-decoration: underline;
     }
+    &.show-all{
+      color: black;
+      text-decoration: underline;
+      &:hover{
+        font-weight: bold;
+      }
+    }
   }
   &__label{
     text-decoration: none;
