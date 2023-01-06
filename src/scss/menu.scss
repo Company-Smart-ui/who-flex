@@ -70,7 +70,11 @@ body{
   }
   &__wrap{
     margin: 0 15px;
+    overflow: auto;
+    max-height: calc(100vh - 320px);
     @include l{
+      overflow: hidden;
+      max-height: none;
       width: calc(100% - 180px);
       display: flex;
       gap: 20px;
@@ -151,12 +155,14 @@ body{
     font-size: 16px;
     color: #333333;
     transition: .3s;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    line-height: 23px;
     @include l{
       color: #666666;
     }
     &:hover{
       color: $accentColor;
+      text-decoration: underline;
     }
   }
   &__label{
@@ -190,20 +196,39 @@ body{
       margin-right: 10px;
     }
   }
-  &__banner{
-    display: block;
+  &__wrap-banner{
+    filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.15));
     margin-bottom: 40px;
-    color: #000000;
-    text-decoration: none;
     @include l{
       margin-top: 80px;
       margin-bottom: 0;
     }
-    &:hover{
-      p{
-        text-decoration: underline;
-      }
+    .swiper-wrapper{
+      padding-bottom: 20px;
     }
+    .swiper-pagination{
+      bottom: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-pagination-bullet{
+      background: black;
+      opacity: 1;
+      width: 7px;
+      height: 7px;
+    }
+    .swiper-pagination-bullet-active{
+      background: transparent;
+      border: 2px solid #e0c363;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &__banner{
+    display: block;
+    color: #000000;
+    text-decoration: none;
     h3{
       font-weight: 700;
       font-size: 20px;
@@ -216,18 +241,64 @@ body{
       margin: 0;
     }
   }
+  &__banner-prev{
+    color: #000000;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
   &__wrap-img{
-    filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.15));
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 20px;
     max-height: 500px;
+    display: block;
+    position: relative;
+    &::after{
+      transition: .4s;
+      z-index: 1;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+      content: "View more";
+      letter-spacing: -.02em;
+      color: #fff;
+      padding: 15px 30px;
+      min-width: 80px;
+      border: 1px solid #fff;
+      border-radius: 100rem;
+      text-align: center;
+    }
+    &::before{
+      transition: .4s;
+      z-index: 1;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: rgba(#000, .4);
+      opacity: 0;
+    }
+    &:hover{
+      &::before, &::after{
+        opacity: 1;
+      }
+      img{
+        transform: scale(1.1);
+      }
+    }
     picture{
       overflow: hidden;
       height: 0;
+      display: block;
+      border-radius: 5px;
       padding-bottom: calc(200% / 310 * 100); // calc(height% / width * 100)
     }
     img{
+      transition: .4s;
       width: 100%;
       height: auto;
       max-width: 100%;
@@ -273,16 +344,15 @@ body{
       font-size: 17px;
       &:hover, &.active{
         color: $accentColor;
+        font-weight: 700;
         path{
           fill: $accentColor;
         }
       }
     }
     &.active{
-      font-weight: 700;
       border-bottom: 2px solid #E0C461;
       @include l{
-        font-weight: 400;
         border: none;
       }
     }
@@ -294,12 +364,11 @@ body{
     }
   }
   svg{
-    width: auto;
-    height: auto;
     transform: scale(.8);
     margin-right: 4px;
     @include l{
       margin-right: 12px;
+      transform: scale(1);
     }
   }
   path{
@@ -322,10 +391,11 @@ body{
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
   @include l{
     right: auto;
     left: 200px;
-    top: 25px;
+    top: 30px;
   }
   .line {
     display: block;
@@ -366,11 +436,16 @@ body{
   }
 }
 .m_nav_top_box{
+  padding: 0 20px;
+}
+.m_nav_logo_box{
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 0 20px;
+  @include l{
+    padding: 0 20px;
+  }
 }
 .m_nav_logo_box .nav_logo {
   @include l{
@@ -492,7 +567,7 @@ body{
     width: 100%;
   }
   .m_nav_logo_box {
-    margin-bottom: 11px;
+    padding: 15px 15px 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
