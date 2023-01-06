@@ -352,6 +352,7 @@ body{
     }
     &.active{
       border-bottom: 2px solid #E0C461;
+      font-weight: 700;
       @include l{
         border: none;
       }
