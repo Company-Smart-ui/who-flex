@@ -86,9 +86,8 @@
       }
     }
     &__title-text{
-      background: #E4E4E4;
       border-radius: 10px;
-      border: none;
+      border: 1px solid #CCCCCC;
       padding: 10px 50px 10px 20px;
       font-weight: 700;
       font-size: 15px;
@@ -116,13 +115,10 @@
     &__body-wrap{
       position: relative;
       &:first-child{
-        padding: 20px 0 25px;
+        padding: 20px 0 45px;
       }
       &:not(:first-child) {
-        padding: 25px 0;
-        .accordion__svg button{
-          top: 31px;
-        }
+        padding: 25px 0 45px;
       }
       &:not(:last-child) {
         border-bottom: 1px solid #ddd;
@@ -139,6 +135,7 @@
         font-size: 18px;
         line-height: 31px;
         margin-bottom: 3px;
+        margin-left: 10px;
         width: calc(100% - 100px);
       }
       span{
@@ -149,7 +146,7 @@
         margin-right: 10px;
         margin-top: 3px;
         @include sm{
-          margin-right: 15px;
+          margin-right: 8px;
           margin-top: 5px;
         }
       }
@@ -159,7 +156,7 @@
         background: transparent;
         border: none;
         position: absolute;
-        top: 25px;
+        bottom: 13px;
         @include md{
           &:hover{
             path{
@@ -183,7 +180,7 @@
       overflow-wrap: anywhere;
       @include sm{
         font-size: 16px;
-        margin: 0 35px;
+        margin: 0 35px 0 39px;
       }
       &[contenteditable="true"]:active,
       &[contenteditable="true"]:focus{
