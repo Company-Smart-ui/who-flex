@@ -51,11 +51,15 @@ function editText(){
                             div.remove()
                         }
                     })
-
                     text[i].removeAttribute('contentEditable');
                     editMode = false;
                 })
-
+                text[i].addEventListener('keyup', function (e){
+                    if (e.keyCode === 13) {
+                        text[i].removeAttribute('contentEditable');
+                        editMode = false;
+                    }
+                })
                 editMode = !editMode;
             });
         }
