@@ -192,6 +192,37 @@
   }
 }
 
+#instructorSearch {
+  position: relative;
+}
+
+.instructor-list {
+  display: none;
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 7px;
+  overflow-y: auto;
+
+  &.active {
+    display: block;
+  }
+
+  span {
+    display: block;
+    border: 1px solid #e7e7e7;
+    border-left: transparent;
+    border-right: transparent;
+    padding: 10px 20px;
+
+    &:hover {
+      cursor: pointer;
+      background: #f5f5f5;
+    }
+  }
+}
 
 // iput file styles //
 

@@ -200,3 +200,43 @@ function showPassFunction() {
 showPassFunction();
 
 
+const inputSearch = document.getElementById("jobSearch");
+const dropdown = document.getElementById("instructorSearch");
+const listSearch = document.querySelector(".instructor-list");
+let itemSearch =  document.querySelectorAll(".instructor-list span");
+
+function listJobSearch() {
+    inputSearch.addEventListener('click', function(){
+        listSearch.classList.add('active');
+    })
+
+    document.addEventListener( 'click', (e) => {
+        const withinBoundaries = e.composedPath().includes(inputSearch);
+        if ( ! withinBoundaries ) {
+            listSearch.classList.remove('active'); 
+        }
+    })
+
+    itemSearch.forEach(item => {
+        item.addEventListener('click', function(){
+            let text = item.textContent; 
+            inputSearch.value = text;
+        })
+    });
+
+}listJobSearch();
+
+
+function jobsSearch() {
+    let filter, list, i, txtValue ;
+    filter = inputSearch.value.toUpperCase();
+    list = dropdown.getElementsByTagName("span");
+    for (i = 0; i < list.length; i++) {
+    txtValue = list[i].textContent || list[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        list[i].style.display = "";
+      } else {
+        list[i].style.display = "none";
+      }
+    }
+}
