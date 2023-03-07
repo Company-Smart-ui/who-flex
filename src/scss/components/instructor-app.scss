@@ -194,10 +194,6 @@
   z-index: 2;
 }
 
-#instructorSearch:hover .instructor-list{
-  display: block;
-}
-
 #jobSearch:focus {
   outline: none !important;
   border: 2px solid #e0c463!important;
@@ -222,12 +218,15 @@
 
   span {
     display: block;
-    border-bottom: 1px solid #e7e7e7;
     padding: 10px 20px;
 
     &:hover {
       cursor: pointer;
       background: #f5f5f5;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e7e7e7;
     }
   }
 }

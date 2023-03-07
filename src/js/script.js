@@ -206,7 +206,7 @@ const listSearch = document.querySelector(".instructor-list");
 let itemSearch =  document.querySelectorAll(".instructor-list span");
 
 function listJobSearch() {
-    inputSearch.addEventListener('click', function(){
+    inputSearch.addEventListener('keyup', function(){
         listSearch.classList.add('active');
     })
 
