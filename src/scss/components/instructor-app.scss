@@ -197,6 +197,9 @@
 #jobSearch:focus {
   outline: none !important;
   border: 2px solid #e0c463!important;
+}
+
+#jobSearch.active:focus {
   border-bottom: 1px solid #e0c463!important;
 }
 

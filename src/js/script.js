@@ -206,14 +206,16 @@ const listSearch = document.querySelector(".instructor-list");
 let itemSearch =  document.querySelectorAll(".instructor-list span");
 
 function listJobSearch() {
-    inputSearch.addEventListener('keyup', function(){
+    inputSearch.addEventListener('input', function(){
         listSearch.classList.add('active');
+        inputSearch.classList.add('active');
     })
 
     document.addEventListener( 'click', (e) => {
         const withinBoundaries = e.composedPath().includes(inputSearch);
         if ( ! withinBoundaries ) {
             listSearch.classList.remove('active'); 
+            inputSearch.classList.remove('active');
         }
     })
 
@@ -231,12 +233,20 @@ function jobsSearch() {
     let filter, list, i, txtValue ;
     filter = inputSearch.value.toUpperCase();
     list = dropdown.getElementsByTagName("span");
+    let jobItem = 0;
     for (i = 0; i < list.length; i++) {
-    txtValue = list[i].textContent || list[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        
+        txtValue = list[i].textContent || list[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
         list[i].style.display = "";
-      } else {
-        list[i].style.display = "none";
-      }
+        } else {
+            list[i].style.display = "none";
+            jobItem++;    
+        }
+        if(jobItem == list.length || jobItem == 0) {
+            listSearch.classList.remove('active'); 
+            inputSearch.classList.remove('active');
+        }
     }
 }
+    
