@@ -209,6 +209,11 @@ function listJobSearch() {
     inputSearch.addEventListener('input', function(){
         listSearch.classList.add('active');
         inputSearch.classList.add('active');
+        if(inputSearch.value == 0) {
+            listSearch.classList.remove('active'); 
+            inputSearch.classList.remove('active');
+        }
+        
     })
 
     document.addEventListener( 'click', (e) => {
@@ -225,6 +230,8 @@ function listJobSearch() {
             inputSearch.value = text;
         })
     });
+
+    
 
 }listJobSearch();
 
@@ -243,7 +250,7 @@ function jobsSearch() {
             list[i].style.display = "none";
             jobItem++;    
         }
-        if(jobItem == list.length || jobItem == 0) {
+        if(jobItem == list.length) {
             listSearch.classList.remove('active'); 
             inputSearch.classList.remove('active');
         }
