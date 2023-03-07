@@ -171,9 +171,6 @@
       }
     }
   }
-  .wrap-textarea{
-
-  }
   .whoflex-input{
     padding: 14px 16px;
     @include sm{
@@ -192,20 +189,32 @@
   }
 }
 
-#instructorSearch {
+#instructorSearch, #jobSearch {
   position: relative;
+  z-index: 2;
+}
+
+#instructorSearch:hover .instructor-list{
+  display: block;
+}
+
+#jobSearch:focus {
+  outline: none !important;
+  border: 2px solid #e0c463!important;
+  border-bottom: 1px solid #e0c463!important;
 }
 
 .instructor-list {
   display: none;
   position: absolute;
-  height: 300px;
+  max-height: 300px;
+  height: auto;
   width: 100%;
   background: #fff;
   border: 1px solid #e7e7e7;
   border-radius: 7px;
   overflow-y: auto;
-  margin-top: 2px;
+  z-index: 1;
 
   &.active {
     display: block;
@@ -213,9 +222,7 @@
 
   span {
     display: block;
-    border: 1px solid #e7e7e7;
-    border-left: transparent;
-    border-right: transparent;
+    border-bottom: 1px solid #e7e7e7;
     padding: 10px 20px;
 
     &:hover {
